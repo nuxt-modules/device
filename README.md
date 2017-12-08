@@ -7,7 +7,7 @@ This module injects flags that indicate a device type into the context and the c
  - Add `nuxt-device-detect` to depedency using yarn or npm to your project
  - Add `nuxt-device-detect` to modules section of nuxt.config.js
 
-```
+```js
 {
   modules: [
    'nuxt-device-detect',
@@ -19,7 +19,7 @@ This module injects flags that indicate a device type into the context and the c
 
 you can use these flags to detect the device type.
 
-```
+```js
 context.isDesktop
 context.isMobile
 context.isTablet
@@ -35,7 +35,7 @@ instance.$device.isMobileOrTablet
 
 ### Switch a view
 
-```
+```html
 <template>
 	<section>
 		<div v-if="$device.isDesktop">
@@ -55,7 +55,7 @@ Ofcourse, you can use `$device` via `this` in a script.
 
 ### Change a layout dynamically
 
-```
+```js
 export default {
 	layout: (ctx) => ctx.isMobile ? 'mobile' : 'default'
 }
