@@ -1,0 +1,12 @@
+{
+  "name": "nuxt-device-detect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": "https://github.com/dotneet/nuxt-device-detect",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shinji yamada <dotneet@gmail.com>",
+  "license": "MIT"
+}
