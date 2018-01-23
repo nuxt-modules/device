@@ -21,7 +21,7 @@ function isMobileOrTablet (a) {
 }
 
 export default async function (ctx, inject) {
-  let userAgent = ctx.req ? ctx.req.headers['user-agent'] : navigator.userAgent
+  let userAgent = process.server ? '' : navigator.userAgent
   let mobile = isMobile(userAgent)
   let mobileOrTablet = isMobileOrTablet(userAgent)
 
@@ -36,4 +36,3 @@ export default async function (ctx, inject) {
     isDesktop: !mobileOrTablet,
   })
 }
-
