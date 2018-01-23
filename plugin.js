@@ -20,8 +20,21 @@ function isMobileOrTablet (a) {
   return REGEX_MOBILE_OR_TABLET1.test(a) || REGEX_MOBILE_OR_TABLET2.test(a.substr(0, 4))
 }
 
+const DEFAULT_USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36'
+
 export default async function (ctx, inject) {
-  let userAgent = ctx.req ? ctx.req.headers['user-agent'] : navigator.userAgent
+  let userAgent = ''
+  if (typeof ctx.req !== 'undefined') {
+    userAgent = ctx.req.headers['user-agent']
+  } else if (typeof navigator !== 'undefined') {
+    userAgent = navigator.userAgent
+  } else {
+    <% if (options.defaultUserAgent) { %>
+      userAgent = '<%= options.defaultUserAgent %>'
+    <% } else { %>
+      userAgent = DEFAULT_USER_AGENT
+    <% } %>
+  }
   let mobile = isMobile(userAgent)
   let mobileOrTablet = isMobileOrTablet(userAgent)
 

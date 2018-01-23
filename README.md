@@ -15,6 +15,20 @@ This module injects flags that indicate a device type into the context and the c
 }
 ```
 
+### Options
+
+`defaultUserAgent` option can be used for `npm run generate`.
+
+```js
+{
+  modules: [
+   'nuxt-device-detect',
+   // set mobile user-agent
+   {defaultUserAgent: 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Mobile Safari/537.36'}
+  ]
+}
+```
+
 ## Added flags
 
 you can use these flags to detect the device type.
