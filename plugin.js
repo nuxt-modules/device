@@ -35,6 +35,10 @@ export default async function (ctx, inject) {
       userAgent = DEFAULT_USER_AGENT
     <% } %>
   }
+  // use default user-agent if user-agent header is not sent
+  if (!userAgent) {
+    userAgent = DEFAULT_USER_AGENT
+  }
   let mobile = isMobile(userAgent)
   let mobileOrTablet = isMobileOrTablet(userAgent)
 
