@@ -39,8 +39,21 @@ export default async function (ctx, inject) {
   if (!userAgent) {
     userAgent = DEFAULT_USER_AGENT
   }
-  let mobile = isMobile(userAgent)
-  let mobileOrTablet = isMobileOrTablet(userAgent)
+  let mobile = null
+  let mobileOrTablet = null
+  if (userAgent === 'Amazon CloudFront') {
+    if (ctx.req.headers['cloudfront-is-mobile-viewer'] === 'true') {
+      mobile = true
+      mobileOrTablet = true
+    }
+    if (ctx.req.headers['cloudfront-is-tablet-viewer'] === 'true') {
+      mobile = false
+      mobileOrTablet = true
+    }
+  } else {
+    mobile = isMobile(userAgent)
+    mobileOrTablet = isMobileOrTablet(userAgent)
+  }
 
   ctx.isMobile = mobile
   ctx.isMobileOrTablet = mobileOrTablet
