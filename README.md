@@ -45,6 +45,14 @@ instance.$device.isTablet
 instance.$device.isMobileOrTablet
 ```
 
+## CloudFront Support
+
+If an user-agent is 'Amazon CloudFront',nuxt-device-detect check 
+the both headers 'CloudFront-Is-Mobile-Viewer' and 'CloudFront-Is-Tablet-Viewer'.
+
+Here are the details about the headers:
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-device
+
 ## Usage
 
 ### Switch a view
