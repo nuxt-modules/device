@@ -38,11 +38,13 @@ context.isDesktop
 context.isMobile
 context.isTablet
 context.isMobileOrTablet
+context.isIos
 
 instance.$device.isDesktop
 instance.$device.isMobile
 instance.$device.isTablet
 instance.$device.isMobileOrTablet
+instance.$device.isIos
 ```
 
 ## CloudFront Support

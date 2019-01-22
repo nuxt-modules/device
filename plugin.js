@@ -20,6 +20,10 @@ function isMobileOrTablet (a) {
   return REGEX_MOBILE_OR_TABLET1.test(a) || REGEX_MOBILE_OR_TABLET2.test(a.substr(0, 4))
 }
 
+function isIos (a) {
+  return /iPad|iPhone|iPod/.test(a)
+}
+
 const DEFAULT_USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36'
 
 export default async function (ctx, inject) {
@@ -41,6 +45,7 @@ export default async function (ctx, inject) {
   }
   let mobile = null
   let mobileOrTablet = null
+  let ios = null
   if (userAgent === 'Amazon CloudFront') {
     if (ctx.req.headers['cloudfront-is-mobile-viewer'] === 'true') {
       mobile = true
@@ -53,17 +58,19 @@ export default async function (ctx, inject) {
   } else {
     mobile = isMobile(userAgent)
     mobileOrTablet = isMobileOrTablet(userAgent)
+    ios = isIos(userAgent)
   }
 
   ctx.isMobile = mobile
   ctx.isMobileOrTablet = mobileOrTablet
   ctx.isTablet = !mobile && mobileOrTablet
   ctx.isDesktop = !mobileOrTablet
+  ctx.isIos = ios
   inject('device', {
     isMobile: mobile,
     isMobileOrTablet: mobileOrTablet,
     isTablet: !mobile && mobileOrTablet,
     isDesktop: !mobileOrTablet,
+    isIos: ios
   })
 }
-
