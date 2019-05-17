@@ -6,6 +6,8 @@ interface Device {
   isMobile: boolean
   isMobileOrTablet: boolean
   isTablet: boolean
+  isWindows: boolean
+  isMacOS: boolean
 }
 
 declare module '@nuxt/vue-app' {
@@ -15,6 +17,8 @@ declare module '@nuxt/vue-app' {
     isMobile: boolean
     isMobileOrTablet: boolean
     isTablet: boolean
+    isWindows: boolean
+    isMacOS: boolean
   }
 }
 
