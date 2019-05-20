@@ -65,12 +65,14 @@ export default async function (ctx, inject) {
   ctx.isMobileOrTablet = mobileOrTablet
   ctx.isTablet = !mobile && mobileOrTablet
   ctx.isDesktop = !mobileOrTablet
+  ctx.isDesktopOrTablet = !mobile
   ctx.isIos = ios
   inject('device', {
     isMobile: mobile,
     isMobileOrTablet: mobileOrTablet,
     isTablet: !mobile && mobileOrTablet,
     isDesktop: !mobileOrTablet,
+    isDesktopOrTablet: !mobile,
     isIos: ios
   })
 }
