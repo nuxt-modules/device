@@ -58,7 +58,7 @@ instance.$device.isMacOS
 
 ## CloudFront Support
 
-If an user-agent is 'Amazon CloudFront', nuxt-device-detect checks
+If a user-agent is 'Amazon CloudFront', nuxt-device-detect checks
 the both headers 'CloudFront-Is-Mobile-Viewer' and 'CloudFront-Is-Tablet-Viewer'.
 
 Here are the details about the headers:
@@ -66,7 +66,7 @@ https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-cachin
 
 ### Caution
 
-`isIos` flag is not available with CloudFront.
+`isIos`, `isWindows` and `isMacOS` flags are not available with CloudFront.
 
 ## Usage
 
