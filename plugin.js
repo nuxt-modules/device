@@ -24,6 +24,14 @@ function isIos (a) {
   return /iPad|iPhone|iPod/.test(a)
 }
 
+function isWindows (a) {
+  return /Windows/.test(a)
+}
+
+function isMacOS (a) {
+  return /Mac OS X/.test(a)
+}
+
 const DEFAULT_USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36'
 
 export default async function (ctx, inject) {
@@ -46,6 +54,9 @@ export default async function (ctx, inject) {
   let mobile = null
   let mobileOrTablet = null
   let ios = null
+  let windows = false
+  let macOS = true
+
   if (userAgent === 'Amazon CloudFront') {
     if (ctx.req.headers['cloudfront-is-mobile-viewer'] === 'true') {
       mobile = true
@@ -60,6 +71,8 @@ export default async function (ctx, inject) {
     mobileOrTablet = isMobileOrTablet(userAgent)
     ios = isIos(userAgent)
   }
+  windows = isWindows(userAgent)
+  macOS = isMacOS(userAgent)
 
   ctx.isMobile = mobile
   ctx.isMobileOrTablet = mobileOrTablet
@@ -67,12 +80,16 @@ export default async function (ctx, inject) {
   ctx.isDesktop = !mobileOrTablet
   ctx.isDesktopOrTablet = !mobile
   ctx.isIos = ios
+  ctx.isWindows = windows
+  ctx.isMacOS = macOS
   inject('device', {
     isMobile: mobile,
     isMobileOrTablet: mobileOrTablet,
     isTablet: !mobile && mobileOrTablet,
     isDesktop: !mobileOrTablet,
-    isDesktopOrTablet: !mobile,
-    isIos: ios
+    isIos: ios,
+    isWindows: windows,
+    isMacOS: macOS,
+    isDesktopOrTablet: !mobile
   })
 }
