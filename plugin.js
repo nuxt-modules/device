@@ -78,6 +78,7 @@ export default async function (ctx, inject) {
   ctx.isMobileOrTablet = mobileOrTablet
   ctx.isTablet = !mobile && mobileOrTablet
   ctx.isDesktop = !mobileOrTablet
+  ctx.isDesktopOrTablet = !mobile
   ctx.isIos = ios
   ctx.isWindows = windows
   ctx.isMacOS = macOS
@@ -88,6 +89,7 @@ export default async function (ctx, inject) {
     isDesktop: !mobileOrTablet,
     isIos: ios,
     isWindows: windows,
-    isMacOS: macOS
+    isMacOS: macOS,
+    isDesktopOrTablet: !mobile
   })
 }

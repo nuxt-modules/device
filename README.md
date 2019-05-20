@@ -39,6 +39,7 @@ context.isDesktop
 context.isMobile
 context.isTablet
 context.isMobileOrTablet
+context.isDesktopOrTablet
 context.isIos
 context.isWindows
 context.isMacOS
@@ -47,6 +48,7 @@ instance.$device.isDesktop
 instance.$device.isMobile
 instance.$device.isTablet
 instance.$device.isMobileOrTablet
+instance.$device.isDesktopOrTablet
 instance.$device.isIos
 instance.$device.isWindows
 instance.$device.isMacOS
