@@ -2,6 +2,8 @@
 
 This module injects flags that indicate a device type into the context and the component instance.
 
+[![nuxt-device-detect Dev Token](https://badge.devtoken.rocks/nuxt-device-detect)](https://devtoken.rocks/package/nuxt-device-detect)
+
 ## Setup
 
  - Add `nuxt-device-detect` to depedency using yarn or npm to your project
