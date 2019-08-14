@@ -106,3 +106,23 @@ export default {
 
 [MIT License](./LICENSE)
 
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/amp.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/amp
+
+[npm-downloads-src]: https://img.shields.io/npm/v/@nuxtjs/amp/latest.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/amp
+
+[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/amp-module.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/nuxt-community/amp-module
+
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/amp-module.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/nuxt-community/amp-module
+
+[david-dm-src]: https://david-dm.org/nuxt-community/amp-module/status.svg?style=flat-square
+[david-dm-href]: https://david-dm.org/nuxt-community/amp-module
+
+[standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
+[standard-js-href]: https://standardjs.com
+
