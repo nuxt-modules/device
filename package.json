@@ -9,11 +9,18 @@
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ext .js,.vue lib",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "files": [
     "lib"
   ],
   "author": "Shinji Yamada <dotneet@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^1.1.2",
+    "eslint": "^6.1.0",
+    "standard-version": "^7.0.0"
+  }
 }
