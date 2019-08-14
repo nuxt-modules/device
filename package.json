@@ -1,13 +1,19 @@
 {
-  "name": "nuxt-device-detect",
-  "version": "1.1.5",
+  "name": "@nuxtjs/device",
+  "version": "1.2.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/module.js",
   "types": "types.d.ts",
-  "repository": "https://github.com/dotneet/nuxt-device-detect",
+  "repository": "https://github.com/nuxt-community/device-module",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "shinji yamada <dotneet@gmail.com>",
+  "files": [
+    "lib"
+  ],
+  "author": "Shinji Yamada <dotneet@gmail.com>",
   "license": "MIT"
 }
