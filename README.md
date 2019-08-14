@@ -1,5 +1,11 @@
 # @nuxtjs/device
 
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
+[![Standard JS][standard-js-src]][standard-js-href]
+[![nuxt-device-detect Dev Token](https://badge.devtoken.rocks/nuxt-device-detect)](https://devtoken.rocks/package/nuxt-device-detect)
+
 This module injects flags that indicate a device type into the context and the component instance.
 
 ## Setup
@@ -95,4 +101,8 @@ export default {
 	layout: (ctx) => ctx.isMobile ? 'mobile' : 'default'
 }
 ```
+
+## License
+
+[MIT License](./LICENSE)
 
