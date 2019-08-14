@@ -108,21 +108,24 @@ export default {
 
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/amp.svg?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/amp
+[npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/device.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/device
 
-[npm-downloads-src]: https://img.shields.io/npm/v/@nuxtjs/amp/latest.svg?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/amp
+[npm-downloads-src]: https://img.shields.io/npm/v/@nuxtjs/device/latest.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/device
 
-[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/amp-module.svg?style=flat-square
-[circle-ci-href]: https://circleci.com/gh/nuxt-community/amp-module
+[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/device-module.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/nuxt-community/device-module
 
-[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/amp-module.svg?style=flat-square
-[codecov-href]: https://codecov.io/gh/nuxt-community/amp-module
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/device-module.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/nuxt-community/device-module
 
-[david-dm-src]: https://david-dm.org/nuxt-community/amp-module/status.svg?style=flat-square
-[david-dm-href]: https://david-dm.org/nuxt-community/amp-module
+[david-dm-src]: https://david-dm.org/nuxt-community/device-module/status.svg?style=flat-square
+[david-dm-href]: https://david-dm.org/nuxt-community/device-module
 
 [standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
 [standard-js-href]: https://standardjs.com
+
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/device.svg?style=flat-square
+[license-href]: https://npmjs.com/package/@nuxtjs/device
 
