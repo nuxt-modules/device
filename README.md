@@ -2,6 +2,7 @@
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Dependencies][david-dm-src]][david-dm-href]
 [![License][license-src]][license-href]
 [![Standard JS][standard-js-src]][standard-js-href]
 [![nuxt-device-detect Dev Token](https://badge.devtoken.rocks/nuxt-device-detect)](https://devtoken.rocks/package/nuxt-device-detect)
