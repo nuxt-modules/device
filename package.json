@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.1.2",
-    "eslint": "^6.1.0",
+    "eslint": "^6.2.1",
     "standard-version": "^7.0.0"
   },
   "publishConfig": {
