@@ -9,7 +9,7 @@
     "lib"
   ],
   "main": "lib/module.js",
-  "types": "types.d.ts",
+  "types": "lib/types.d.ts",
   "scripts": {
     "lint": "eslint --ext .js,.vue lib",
     "release": "standard-version && git push --follow-tags && npm publish",
