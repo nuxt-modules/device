@@ -4,8 +4,12 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.2.4](https://github.com/nuxt-community/device-module/compare/v1.2.3...v1.2.4) (2019-11-26)
 
-### [1.2.3](https://github.com/nuxt-community/device-module/compare/v1.2.2...v1.2.3) (2019-08-24)
+### Features
 
+ * Add cloudflare detection.
+
+
+### [1.2.3](https://github.com/nuxt-community/device-module/compare/v1.2.2...v1.2.3) (2019-08-24)
 
 ### Bug Fixes
 
