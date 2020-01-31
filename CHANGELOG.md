@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.2.6](https://github.com/nuxt-community/device-module/compare/v1.2.5...v1.2.6) (2020-01-31)
 
+### Bug Fixes
+
+ * migrate a type declaration file to nuxt 2.9+
+
 ### [1.2.5](https://github.com/nuxt-community/device-module/compare/v1.2.4...v1.2.5) (2020-01-30)
 
 ### Features
