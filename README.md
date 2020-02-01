@@ -50,6 +50,7 @@ context.isDesktopOrTablet
 context.isIos
 context.isWindows
 context.isMacOS
+context.isAndroid
 
 instance.$device.isDesktop
 instance.$device.isMobile
@@ -59,6 +60,7 @@ instance.$device.isDesktopOrTablet
 instance.$device.isIos
 instance.$device.isWindows
 instance.$device.isMacOS
+instance.$device.isAndroid
 ```
 
 ## CloudFront Support
