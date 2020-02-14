@@ -24,11 +24,15 @@ declare module '@nuxt/vue-app' {
     isWindows: boolean
     isMacOS: boolean
   }
+
+  interface NuxtAppOptions {
+    $device: Device
+  }
 }
 
 // Nuxt 2.9+
 declare module '@nuxt/types' {
-  interface NuxtAppOptions {
+  interface Context {
     isDesktop: boolean
     isIos: boolean
     isAndroid: boolean
@@ -39,10 +43,19 @@ declare module '@nuxt/types' {
     isWindows: boolean
     isMacOS: boolean
   }
+  interface NuxtAppOptions {
+    $device: Device
+  }
 }
 
 declare module 'vue/types/vue' {
   interface Vue {
+    $device: Device
+  }
+}
+
+declare module 'vuex/types/index' {
+  interface Store<S> {
     $device: Device
   }
 }
