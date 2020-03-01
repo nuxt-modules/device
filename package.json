@@ -20,6 +20,7 @@
     "@nuxtjs/module-test-utils": "^1.5.0",
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
+    "jsdom": "^16.2.0",
     "nuxt-edge": "^2.11.1-26377936.6e09e78",
     "standard-version": "^7.1.0"
   },
