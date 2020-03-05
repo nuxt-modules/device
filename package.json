@@ -13,11 +13,14 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue lib",
     "release": "standard-version && git push --follow-tags && npm publish",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest test"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.2",
+    "@nuxtjs/module-test-utils": "^1.5.0",
     "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "nuxt-edge": "^2.11.1-26377936.6e09e78",
     "standard-version": "^7.1.0"
   },
   "publishConfig": {
