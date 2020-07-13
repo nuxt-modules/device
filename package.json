@@ -22,7 +22,7 @@
     "jest": "^25.5.4",
     "jsdom": "^16.2.2",
     "nuxt-edge": "^2.11.1-26378723.c5d0067",
-    "standard-version": "^7.1.0"
+    "standard-version": "^8.0.0"
   },
   "publishConfig": {
     "access": "public"
