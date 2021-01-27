@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/nuxt-community/device-module/compare/v1.2.7...v2.0.0) (2021-01-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* improvements of the module (#56)
+
+### Features
+
+* improvements of the module ([#56](https://github.com/nuxt-community/device-module/issues/56)) ([a822554](https://github.com/nuxt-community/device-module/commit/a82255457b4aa292c80e1a1751151a5b8eea4fc9))
+
 ### [1.2.7](https://github.com/nuxt-community/device-module/compare/v1.2.6...v1.2.7) (2020-02-14)
 
 
