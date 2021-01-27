@@ -11,20 +11,24 @@
   "main": "lib/module.js",
   "types": "lib/types.d.ts",
   "scripts": {
+    "dev": "nuxt test/fixture",
     "lint": "eslint --ext .js,.vue lib",
     "release": "standard-version && git push --follow-tags && npm publish",
     "test": "jest test"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^2.0.2",
+    "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/module-test-utils": "^1.6.3",
-    "eslint": "^6.8.0",
-    "jest": "^25.5.4",
+    "eslint": "^7.18.0",
+    "jest": "^26.6.3",
     "jsdom": "^16.4.0",
-    "nuxt-edge": "^2.11.1-26378723.c5d0067",
-    "standard-version": "^7.1.0"
+    "nuxt-edge": "^2.15.0-26856070.8350560",
+    "standard-version": "^9.1.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "defu": "^3.2.2"
   }
 }

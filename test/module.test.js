@@ -19,7 +19,7 @@ describe('Device module', () => {
     await nuxt.close()
   })
 
-  beforeEach(async () => {
+  beforeEach(() => {
     headers = {}
     ctx = {
       req: {
