@@ -30,6 +30,7 @@ Add it to the `buildModules` section of your `nuxt.config`:
 ```
 
 That's it, you can now use `$device` in your [Nuxt](https://nuxtjs.org) app ✨
+
 ## Flags
 
 You can use these flags to detect the device type.
