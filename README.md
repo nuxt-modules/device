@@ -9,6 +9,8 @@
 
 This module injects flags that indicate a device type into the context and the component instance.
 
+See [demo on CodeSandbox](https://codesandbox.io/s/github/nuxt-community/device-module).
+
 ## Setup
 
 Add `@nuxtjs/device` to the dev dependencies using yarn or npm to your project.
