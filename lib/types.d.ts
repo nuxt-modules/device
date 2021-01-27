@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 interface Device {
+  userAgent: string
   isDesktop: boolean
   isIos: boolean
   isAndroid: boolean
@@ -14,15 +15,7 @@ interface Device {
 
 declare module '@nuxt/vue-app' {
   interface Context {
-    isDesktop: boolean
-    isIos: boolean
-    isAndroid: boolean
-    isMobile: boolean
-    isMobileOrTablet: boolean
-    isDesktopOrTablet: boolean
-    isTablet: boolean
-    isWindows: boolean
-    isMacOS: boolean
+    $device: Device
   }
 
   interface NuxtAppOptions {
@@ -33,15 +26,7 @@ declare module '@nuxt/vue-app' {
 // Nuxt 2.9+
 declare module '@nuxt/types' {
   interface Context {
-    isDesktop: boolean
-    isIos: boolean
-    isAndroid: boolean
-    isMobile: boolean
-    isMobileOrTablet: boolean
-    isDesktopOrTablet: boolean
-    isTablet: boolean
-    isWindows: boolean
-    isMacOS: boolean
+    $device: Device
   }
   interface NuxtAppOptions {
     $device: Device

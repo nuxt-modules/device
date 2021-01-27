@@ -11,76 +11,42 @@ This module injects flags that indicate a device type into the context and the c
 
 ## Setup
 
- - Add `@nuxtjs/device` to depedency using yarn or npm to your project
- - Add `@nuxtjs/device` to modules section of nuxt.config.js
+Add `@nuxtjs/device` to the dev dependencies using yarn or npm to your project.
+
+```bash
+yarn add --dev @nuxtjs/device
+# Using npm
+npm install -D @nuxtjs/device
+```
+
+Add it to the `buildModules` section of your `nuxt.config`:
 
 ```js
 {
-  modules: [
+  buildModules: [
    '@nuxtjs/device',
   ]
 }
 ```
 
-### Options
-
-`defaultUserAgent` option can be used for `npm run generate`.
-
-```js
-{
-  modules: [
-    [
-      '@nuxtjs/device',
-      {defaultUserAgent: 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Mobile Safari/537.36'}
-    ]
-  ]
-}
-```
-
-## Added flags
+That's it, you can now use `$device` in your [Nuxt](https://nuxtjs.org) app ✨
+## Flags
 
 You can use these flags to detect the device type.
 
 ```js
-context.isDesktop
-context.isMobile
-context.isTablet
-context.isMobileOrTablet
-context.isDesktopOrTablet
-context.isIos
-context.isWindows
-context.isMacOS
-context.isAndroid
-
-instance.$device.isDesktop
-instance.$device.isMobile
-instance.$device.isTablet
-instance.$device.isMobileOrTablet
-instance.$device.isDesktopOrTablet
-instance.$device.isIos
-instance.$device.isWindows
-instance.$device.isMacOS
-instance.$device.isAndroid
+$device.isDesktop
+$device.isMobile
+$device.isTablet
+$device.isMobileOrTablet
+$device.isDesktopOrTablet
+$device.isIos
+$device.isWindows
+$device.isMacOS
+$device.isAndroid
 ```
 
-## CloudFront Support
-
-If a user-agent is 'Amazon CloudFront', this module checks
-the both headers 'CloudFront-Is-Mobile-Viewer' and 'CloudFront-Is-Tablet-Viewer'.
-
-Here are the details about the headers:
-https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-device
-
-### Caution
-
-`isIos`, `isWindows` and `isMacOS` flags are not available with CloudFront.
-
-## Cloudflare Support
-
-This module checks the header 'CF-Device-Type'.
-
-Here are the details about the header:
-https://support.cloudflare.com/hc/en-us/articles/229373388-Cache-Content-by-Device-Type-Mobile-Tablet-Desktop-
+The user agent is also injected an accessible with `$device.userAgent`.
 
 ## Usage
 
@@ -102,20 +68,63 @@ https://support.cloudflare.com/hc/en-us/articles/229373388-Cache-Content-by-Devi
 </template>
 ```
 
-Ofcourse, you can use `$device` via `this` in a script.
+Of course, you can use `$device` via `this` in a script.
 
 ### Change a layout dynamically
 
 ```js
 export default {
-	layout: (ctx) => ctx.isMobile ? 'mobile' : 'default'
+  layout: (ctx) => ctx.$device.isMobile ? 'mobile' : 'default'
 }
 ```
+
+### Add a custom flag
+
+You can add other flags to `$device` by adding a [Nuxt plugin](https://nuxtjs.org/docs/2.x/directory-structure/plugins):
+
+```js
+// plugins/custom-flag.js
+export default function ({ $device }) {
+  $device.isCustom = $device.userAgent.includes('Custom-Agent') ? true : false
+}
+```
+
+### Options
+
+`defaultUserAgent` option can be used when running `npm run generate`.
+
+```js
+{
+  buildModules: ['@nuxtjs/device'],
+  device: {
+    defaultUserAgent: 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Mobile Safari/537.36'
+  }
+}
+```
+
+Note that the default user agent value is set to `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36`.
+## CloudFront Support
+
+If a user-agent is `Amazon CloudFront`, this module checks
+the both headers `CloudFront-Is-Mobile-Viewer` and `CloudFront-Is-Tablet-Viewer`.
+
+Here are the details about the headers:
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-device
+
+### Caution
+
+`isIos`, `isWindows` and `isMacOS` flags are not available with CloudFront.
+
+## Cloudflare Support
+
+This module checks the header `CF-Device-Type`.
+
+Here are the details about the header:
+https://support.cloudflare.com/hc/en-us/articles/229373388-Cache-Content-by-Device-Type-Mobile-Tablet-Desktop-
 
 ## License
 
 [MIT License](./LICENSE)
-
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/device.svg?style=flat-square
