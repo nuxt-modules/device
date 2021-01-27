@@ -2,7 +2,6 @@
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![Dependencies][david-dm-src]][david-dm-href]
 [![License][license-src]][license-href]
 [![Standard JS][standard-js-src]][standard-js-href]
 [![nuxt-device-detect Dev Token](https://badge.devtoken.rocks/nuxt-device-detect)](https://devtoken.rocks/package/nuxt-device-detect)
@@ -141,9 +140,6 @@ https://support.cloudflare.com/hc/en-us/articles/229373388-Cache-Content-by-Devi
 
 [codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/device-module.svg?style=flat-square
 [codecov-href]: https://codecov.io/gh/nuxt-community/device-module
-
-[david-dm-src]: https://david-dm.org/nuxt-community/device-module/status.svg?style=flat-square
-[david-dm-href]: https://david-dm.org/nuxt-community/device-module
 
 [standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
 [standard-js-href]: https://standardjs.com
