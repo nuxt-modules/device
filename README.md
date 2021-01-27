@@ -57,17 +57,17 @@ The user agent is also injected an accessible with `$device.userAgent`.
 
 ```html
 <template>
-	<section>
-		<div v-if="$device.isDesktop">
-			Desktop
-		</div>
-		<div v-else-if="$device.isTablet">
-			Tablet
-		</div>
-		<div v-else>
-			Mobile
-		</div>
-	</section>
+  <section>
+    <div v-if="$device.isDesktop">
+      Desktop
+    </div>
+    <div v-else-if="$device.isTablet">
+      Tablet
+    </div>
+    <div v-else>
+      Mobile
+    </div>
+  </section>
 </template>
 ```
 
