@@ -66,6 +66,21 @@ describe('Device module', () => {
     })
   })
 
+  describe('detects an-app browser', () => {
+    it('Instagram', () => {
+      const userAgent =
+        'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15A372 Instagram';
+
+      expect(extractDevices(ctx, userAgent)).toEqual({ mobile: true, mobileOrTablet: true, android: false, ios: true, macOS: true, windows: false })
+    })
+    it('Facebook', () => {
+      const userAgent =
+        "Mozilla/5.0 ((iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit (KHTML, like Gecko) Mobile [FBAN/FBForIPhone;FBAV/4.1;FBBV/4100.0;FBDV/iPhone3,1;FBMD/iPhone;FBSN/iPhone OS;FBSV/5.1.1;FBSS/2; tablet;FBLC/en_US]";
+
+      expect(extractDevices(ctx, userAgent)).toEqual({ mobile: true, mobileOrTablet: true, android: false, ios: true, macOS: true, windows: false })
+    })
+  })
+
   it('detects cloudflare headers', () => {
     headers['cf-device-type'] = 'mobile'
 
