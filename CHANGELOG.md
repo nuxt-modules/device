@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [2.0.1](https://github.com/nuxt-community/device-module/compare/v2.0.0...v2.0.1) (2021-02-27)
 
+### Features
+
+* added support for the in-app browsers of Instagram and Facebook (#59)
+
 ## [2.0.0](https://github.com/nuxt-community/device-module/compare/v1.2.7...v2.0.0) (2021-01-27)
 
 
