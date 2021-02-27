@@ -19,11 +19,11 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/module-test-utils": "^1.6.3",
-    "eslint": "^7.18.0",
+    "eslint": "^7.20.0",
     "jest": "^26.6.3",
     "jsdom": "^16.4.0",
-    "nuxt-edge": "^2.15.0-26856070.8350560",
-    "standard-version": "^9.1.0"
+    "nuxt-edge": "^2.15.0-26889155.dd0eea40",
+    "standard-version": "^9.1.1"
   },
   "publishConfig": {
     "access": "public"
