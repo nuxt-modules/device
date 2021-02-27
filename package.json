@@ -13,7 +13,8 @@
   "scripts": {
     "dev": "nuxt test/fixture",
     "lint": "eslint --ext .js,.vue lib",
-    "release": "standard-version && git push --follow-tags && npm publish",
+    "new-version": "standard-version",
+    "release": "git push --follow-tags && npm publish",
     "test": "jest test"
   },
   "devDependencies": {
