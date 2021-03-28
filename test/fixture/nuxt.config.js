@@ -8,7 +8,8 @@ module.exports = {
   },
   buildModules: [require('../../')],
   device: {
-    test: true
+    test: true,
+    refreshOnResize: true
   },
   plugins: ['~/plugins/custom-flag.js']
 }

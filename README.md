@@ -104,6 +104,17 @@ export default function ({ $device }) {
 }
 ```
 
+`refreshOnResize` refresh flags when the window resized.(default: false)
+
+```js
+{
+  buildModules: ['@nuxtjs/device'],
+  device: {
+    refreshOnResize: true
+  }
+}
+```
+
 Note that the default user agent value is set to `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36`.
 ## CloudFront Support
 
