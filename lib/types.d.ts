@@ -11,6 +11,11 @@ interface Device {
   isTablet: boolean
   isWindows: boolean
   isMacOS: boolean
+  isSafari: boolean
+  isFirefox: boolean
+  isEdge: boolean
+  isChrome: boolean
+  isSamsung: boolean
 }
 
 declare module '@nuxt/vue-app' {
