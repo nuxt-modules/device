@@ -6,7 +6,7 @@ async function main() {
   const items = await response.json()
   const patterns = items.map(item => item.pattern)
   const regex = patterns.join('|')
-  console.log(`/${regex}/i`)
+  console.log(`/${regex}/`)
 }
 
 main()
