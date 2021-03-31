@@ -16,6 +16,7 @@ interface Device {
   isEdge: boolean
   isChrome: boolean
   isSamsung: boolean
+  isCrawler: boolean
 }
 
 declare module '@nuxt/vue-app' {

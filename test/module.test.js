@@ -1,7 +1,7 @@
 const { setup, loadConfig, url } = require('@nuxtjs/module-test-utils')
 
 const defaultOsSettings = { android: null, ios: null, macOS: false, windows: false }
-const defaultBrowserFlags = { isChrome: false, isEdge: false, isFirefox: false, isSafari: false, isSamsung: false }
+const defaultBrowserFlags = { isChrome: false, isEdge: false, isFirefox: false, isSafari: false, isSamsung: false, isCrawler: false }
 const createBrowserFlags = (override) => {
   return { ...defaultBrowserFlags, ...override }
 }
@@ -95,4 +95,13 @@ describe('Device module', () => {
     headers['cf-device-type'] = 'desktop'
     expect(extractDevices(ctx, '')).toEqual({ mobile: false, mobileOrTablet: false, ...defaultOsSettings, ...defaultBrowserFlags })
   })
+
+  it('detects crawlers', () => {
+      const googlebots = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+      expect(extractDevices(ctx, googlebots).isCrawler).toEqual(true)
+      const yahoobots = "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)"
+      expect(extractDevices(ctx, yahoobots).isCrawler).toEqual(true)
+      const biduspider = "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)"
+      expect(extractDevices(ctx, biduspider).isCrawler).toEqual(true)
+  });
 })
