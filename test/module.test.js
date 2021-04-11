@@ -70,6 +70,54 @@ describe('Device module', () => {
     })
   })
 
+  describe('detects a browser', () => {
+    it('detects Chrome', () => {
+      const userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36';
+      const result = extractDevices(ctx, userAgent)
+      expect(result.isChrome).toEqual(true)
+      expect(result.isFirefox).toEqual(false)
+      expect(result.isEdge).toEqual(false)
+      expect(result.isSafari).toEqual(false)
+      expect(result.isSamsung).toEqual(false)
+    })
+    it('detects Firefox', () => {
+      const userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0';
+      const result = extractDevices(ctx, userAgent)
+      expect(result.isChrome).toEqual(false)
+      expect(result.isFirefox).toEqual(true)
+      expect(result.isEdge).toEqual(false)
+      expect(result.isSafari).toEqual(false)
+      expect(result.isSamsung).toEqual(false)
+    })
+    it('detects Edge', () => {
+      const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 Edg/81.0.416.72';
+      const result = extractDevices(ctx, userAgent)
+      expect(result.isChrome).toEqual(false)
+      expect(result.isFirefox).toEqual(false)
+      expect(result.isEdge).toEqual(true)
+      expect(result.isSafari).toEqual(false)
+      expect(result.isSamsung).toEqual(false)
+    })
+    it('detects Safari', () => {
+      const userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1'
+      const result = extractDevices(ctx, userAgent)
+      expect(result.isChrome).toEqual(false)
+      expect(result.isFirefox).toEqual(false)
+      expect(result.isEdge).toEqual(false)
+      expect(result.isSafari).toEqual(true)
+      expect(result.isSamsung).toEqual(false)
+    })
+    it('detects Samsung', () => {
+      const userAgent = 'Mozilla/5.0 (Linux; Android 10; SAMSUNG SM-A515F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/12.1 Chrome/79.0.3945.136 Mobile Safari/537.36'
+      const result = extractDevices(ctx, userAgent)
+      expect(result.isChrome).toEqual(false)
+      expect(result.isFirefox).toEqual(false)
+      expect(result.isEdge).toEqual(false)
+      expect(result.isSafari).toEqual(false)
+      expect(result.isSamsung).toEqual(true)
+    })
+  })
+
   describe('detects an-app browser', () => {
     it('Instagram', () => {
       const userAgent =
