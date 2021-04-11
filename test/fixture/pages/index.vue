@@ -27,6 +27,21 @@
     <div v-if="$device.isDesktopOrTablet">
       isDesktopOrTablet
     </div>
+    <div v-if="$device.isSafari">
+      isSafari
+    </div>
+    <div v-if="$device.isFirefox">
+      isFirefox
+    </div>
+    <div v-if="$device.isEdge">
+      isEdge
+    </div>
+    <div v-if="$device.isChrome">
+      isChrome
+    </div>
+    <div v-if="$device.isSamsung">
+      isSamsung
+    </div>
     <pre>{{ JSON.stringify($device, null, 2) }}</pre>
   </div>
 </template>

@@ -46,6 +46,11 @@ $device.isIos
 $device.isWindows
 $device.isMacOS
 $device.isAndroid
+$device.isFirefox
+$device.isEdge
+$device.isChrome
+$device.isSamsung
+$device.isCrawler
 ```
 
 The user agent is also injected an accessible with `$device.userAgent`.
@@ -157,4 +162,8 @@ https://support.cloudflare.com/hc/en-us/articles/229373388-Cache-Content-by-Devi
 
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/device.svg?style=flat-square
 [license-href]: https://npmjs.com/package/@nuxtjs/device
+
+## Data Source
+
+This module uses [crawler-user-agents](https://github.com/monperrus/crawler-user-agents) to generate the regular expression that detect a crawler.
 
