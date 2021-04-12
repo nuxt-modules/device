@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/nuxt-community/device-module/compare/v2.0.1...v2.1.0) (2021-04-12)
+
+
+### Features
+
+* Add browser detection. ([7565909](https://github.com/nuxt-community/device-module/commit/75659099455084c63fb5e4320b3bf699613129ae))
+* Add isCrawler flag. ([37882bd](https://github.com/nuxt-community/device-module/commit/37882bdb6fe023aae839b06e7500066186f5b143))
+* add refreshOnResize option ([3d2e0d1](https://github.com/nuxt-community/device-module/commit/3d2e0d10acdb3c307b43be770765ca9e07d43ca6))
+
+
+### Bug Fixes
+
+* fix incorrect regex for edge browser ([79e4ffd](https://github.com/nuxt-community/device-module/commit/79e4ffd85c079102ae1085fbe16267c0797d4169))
+* make the regex that detect a crawler case sensitive. ([8032d85](https://github.com/nuxt-community/device-module/commit/8032d85209796c7f7c34eceef8d236ed7327eed0))
+
 ### [2.0.1](https://github.com/nuxt-community/device-module/compare/v2.0.0...v2.0.1) (2021-02-27)
 
 ### Features
