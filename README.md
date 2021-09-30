@@ -24,15 +24,13 @@ Add it to the `buildModules` section of your `nuxt.config`:
 
 ```js
 {
-  buildModules: [
-   '@nuxtjs/device',
-  ]
+  buildModules: ["@nuxtjs/device"];
 }
 ```
 
 That's it, you can now use `$device` in your [Nuxt](https://nuxtjs.org) app ✨
 
-# TypeScript support
+## TypeScript support
 
 Add the types to your `"types"` array in `tsconfig.json` after the `@nuxt/types` entry.
 
@@ -51,20 +49,20 @@ Add the types to your `"types"` array in `tsconfig.json` after the `@nuxt/types`
 You can use these flags to detect the device type.
 
 ```js
-$device.isDesktop
-$device.isMobile
-$device.isTablet
-$device.isMobileOrTablet
-$device.isDesktopOrTablet
-$device.isIos
-$device.isWindows
-$device.isMacOS
-$device.isAndroid
-$device.isFirefox
-$device.isEdge
-$device.isChrome
-$device.isSamsung
-$device.isCrawler
+$device.isDesktop;
+$device.isMobile;
+$device.isTablet;
+$device.isMobileOrTablet;
+$device.isDesktopOrTablet;
+$device.isIos;
+$device.isWindows;
+$device.isMacOS;
+$device.isAndroid;
+$device.isFirefox;
+$device.isEdge;
+$device.isChrome;
+$device.isSamsung;
+$device.isCrawler;
 ```
 
 The user agent is also injected an accessible with `$device.userAgent`.
@@ -76,15 +74,9 @@ The user agent is also injected an accessible with `$device.userAgent`.
 ```html
 <template>
   <section>
-    <div v-if="$device.isDesktop">
-      Desktop
-    </div>
-    <div v-else-if="$device.isTablet">
-      Tablet
-    </div>
-    <div v-else>
-      Mobile
-    </div>
+    <div v-if="$device.isDesktop">Desktop</div>
+    <div v-else-if="$device.isTablet">Tablet</div>
+    <div v-else>Mobile</div>
   </section>
 </template>
 ```
@@ -95,8 +87,8 @@ Of course, you can use `$device` via `this` in a script.
 
 ```js
 export default {
-  layout: (ctx) => ctx.$device.isMobile ? 'mobile' : 'default'
-}
+  layout: (ctx) => (ctx.$device.isMobile ? "mobile" : "default"),
+};
 ```
 
 ### Add a custom flag
@@ -106,7 +98,7 @@ You can add other flags to `$device` by adding a [Nuxt plugin](https://nuxtjs.or
 ```js
 // plugins/custom-flag.js
 export default function ({ $device }) {
-  $device.isCustom = $device.userAgent.includes('Custom-Agent') ? true : false
+  $device.isCustom = $device.userAgent.includes("Custom-Agent") ? true : false;
 }
 ```
 
@@ -135,6 +127,7 @@ export default function ({ $device }) {
 ```
 
 Note that the default user agent value is set to `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36`.
+
 ## CloudFront Support
 
 If a user-agent is `Amazon CloudFront`, this module checks
@@ -159,25 +152,20 @@ https://support.cloudflare.com/hc/en-us/articles/229373388-Cache-Content-by-Devi
 [MIT License](./LICENSE)
 
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/device.svg?style=flat-square
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/device
-
 [npm-downloads-src]: https://img.shields.io/npm/v/@nuxtjs/device/latest.svg?style=flat-square
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/device
-
 [circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/device-module.svg?style=flat-square
 [circle-ci-href]: https://circleci.com/gh/nuxt-community/device-module
-
 [codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/device-module.svg?style=flat-square
 [codecov-href]: https://codecov.io/gh/nuxt-community/device-module
-
 [standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
 [standard-js-href]: https://standardjs.com
-
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/device.svg?style=flat-square
 [license-href]: https://npmjs.com/package/@nuxtjs/device
 
 ## Data Source
 
 This module uses [crawler-user-agents](https://github.com/monperrus/crawler-user-agents) to generate the regular expression that detect a crawler.
-
