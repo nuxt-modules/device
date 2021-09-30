@@ -32,6 +32,20 @@ Add it to the `buildModules` section of your `nuxt.config`:
 
 That's it, you can now use `$device` in your [Nuxt](https://nuxtjs.org) app ✨
 
+# TypeScript support
+
+Add the types to your `"types"` array in `tsconfig.json` after the `@nuxt/types` entry.
+
+:warning: Use `@nuxt/vue-app` instead of `@nuxt/types` for nuxt < 2.9.
+
+```json
+{
+  "compilerOptions": {
+    "types": ["@nuxt/types", "@nuxtjs/device"]
+  }
+}
+```
+
 ## Flags
 
 You can use these flags to detect the device type.
