@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-interface Device {
+export interface Device {
   userAgent: string
   isDesktop: boolean
   isIos: boolean
