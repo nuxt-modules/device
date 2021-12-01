@@ -63,6 +63,7 @@ $device.isAndroid
 $device.isFirefox
 $device.isEdge
 $device.isChrome
+$device.isSafari
 $device.isSamsung
 $device.isCrawler
 ```
