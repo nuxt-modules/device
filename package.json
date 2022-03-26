@@ -32,6 +32,6 @@
     "access": "public"
   },
   "dependencies": {
-    "defu": "^4.0.1"
+    "defu": "^6.0.0"
   }
 }
