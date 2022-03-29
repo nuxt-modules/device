@@ -19,6 +19,11 @@ export interface Device {
   isCrawler: boolean
 }
 
+interface DeviceOptions {
+  refreshOnResize?: boolean
+  defaultUserAgent?: string
+}
+
 declare module '@nuxt/vue-app' {
   interface Context {
     $device: Device
@@ -34,8 +39,13 @@ declare module '@nuxt/types' {
   interface Context {
     $device: Device
   }
+
   interface NuxtAppOptions {
     $device: Device
+  }
+
+  interface Configuration {
+    device?: DeviceOptions
   }
 }
 
