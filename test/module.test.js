@@ -11,11 +11,15 @@ describe('Device module', () => {
 
   let headers
   let extractDevices
+  let extractFromUserAgentData
+  let extractFromUserHint
 
   beforeAll(async () => {
     ({ nuxt } = await setup(loadConfig(__dirname)))
     const window = await nuxt.renderAndGetWindow(url('/'))
     extractDevices = window.$nuxt.$device.extractDevices
+    extractFromUserAgentData = window.$nuxt.$device.extractFromUserAgentData
+    extractFromUserHint = window.$nuxt.$device.extractFromUserHint
   }, 60000)
 
   afterAll(async () => {
@@ -146,4 +150,139 @@ describe('Device module', () => {
       const biduspider = "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)"
       expect(extractDevices(headers, biduspider).isCrawler).toEqual(true)
   });
+
+  describe('UserAgentData', () => {
+    const base = {
+      "brands": [
+      {
+        "brand": " Not A;Brand",
+        "version": "99"
+      },
+      {
+        "brand": "Chromium",
+        "version": "100"
+      },
+      {
+        "brand": "Google Chrome",
+        "version": "100"
+      }
+    ],
+      "mobile": false,
+      "platform": "macOS"
+    }
+    it('can detect brand', () => {
+      {
+        let {
+          isChrome,
+          isEdge
+        } = extractFromUserAgentData({ ...base, "brands": [{"brand": "Google Chrome", "version": "100"}] })
+        expect([isChrome, isEdge]).toEqual([true, false])
+      }
+      {
+        let {
+          isChrome,
+          isEdge
+        } = extractFromUserAgentData({ ...base, "brands": [{"brand": "Microsoft Edge", "version": "100"}] })
+        expect([isChrome, isEdge]).toEqual([false, true])
+      }
+    })
+
+    it('can detect platform', () => {
+      {
+        let {
+          macOS,
+          windows
+        } = extractFromUserAgentData({ ...base })
+        expect([macOS, windows]).toEqual([true, false])
+      }
+      {
+        let {
+          macOS,
+          windows
+        } = extractFromUserAgentData({
+          ...base,
+          "platform": "Windows"
+        })
+        expect([macOS, windows]).toEqual([false, true])
+      }
+    })
+    it('can detect mobile', () => {
+      {
+        let {
+          mobile
+        } = extractFromUserAgentData({ ...base, mobile: false })
+        expect(mobile).toEqual(false)
+      }
+      {
+        let {
+          mobile,
+        } = extractFromUserAgentData({
+          ...base,
+          mobile: true
+        })
+        expect(mobile).toEqual(true)
+      }
+    })
+  })
+
+  describe('clienthint header', () => {
+    const base = {
+      'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"',
+      'sec-ch-ua-mobile': '?0',
+      'sec-ch-ua-platform': 'macOS'
+    }
+    it('can parse arbitrary brand ', () => {
+      const result = extractFromUserHint({
+        ...base,
+        'sec-ch-ua': ' "()-./:;=?_ Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"'
+      })
+      expect(result).toEqual({
+        "mobile": false,
+        "windows": false,
+        "macOS": true,
+        "isEdge": false,
+        "isChrome": true
+      })
+    })
+    it('can detect ua', () => {
+      const result = extractFromUserHint({
+        ...base,
+        'sec-ch-ua': '"(Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"'
+      })
+      expect(result).toEqual({
+        "mobile": false,
+        "windows": false,
+        "macOS": true,
+        "isEdge": true,
+        "isChrome": false
+      })
+    })
+    it('can detect mobile', () => {
+      const result = extractFromUserHint({
+        ...base,
+        'sec-ch-ua-mobile': '?1',
+      })
+      expect(result).toEqual({
+        "mobile": true,
+        "mobileOrTablet": true,
+        "windows": false,
+        "macOS": true,
+        "isEdge": false,
+        "isChrome": true
+      })
+    })
+    it('can detect platform', () => {
+      const result = extractFromUserHint({
+        ...base,
+        'sec-ch-ua-platform': 'Windows',
+      })
+      expect(result).toEqual({
+        "mobile": false,
+        "windows": true,
+        "macOS": false,
+        "isEdge": false,
+        "isChrome": true
+      })
+    })
+  })
 })

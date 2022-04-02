@@ -135,7 +135,30 @@ export default function ({ $device }) {
 }
 ```
 
+`clientHints.enabled` enables client hints feature.(default by false)
+
 Note that the default user agent value is set to `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36`.
+
+## User-Agent Client Hints Support
+
+To enable Client Hints, set clientHints.enabled options to true.
+
+### Client Side
+
+`navigator.userAgentData` are referred to detect a device and a platform.
+
+results from `navigator.userAgent` are overridden.
+
+### Server Side
+
+the following request headers are referred to detect a device and a platform.
+
+ - sec-ch-ua
+ - sec-ch-mobile
+ - sec-ch-platform
+
+results from user-agent header are overridden.
+
 ## CloudFront Support
 
 If a user-agent is `Amazon CloudFront`, this module checks
