@@ -19,7 +19,7 @@
     "test": "jest test"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^9.0.0",
+    "@nuxtjs/eslint-config": "^10.0.0",
     "@nuxtjs/module-test-utils": "^1.6.3",
     "eslint": "^8.12.0",
     "jest": "^27.5.1",
