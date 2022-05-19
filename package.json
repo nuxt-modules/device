@@ -1,37 +1,36 @@
 {
   "name": "@nuxtjs/device",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Device detection module for Nuxt.js",
   "repository": "nuxt-community/device-module",
   "license": "MIT",
   "author": "Shinji Yamada <dotneet@gmail.com>",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./src/runtime/types",
   "files": [
-    "lib"
+    "dist"
   ],
-  "main": "lib/module.js",
-  "types": "lib/types.d.ts",
   "scripts": {
-    "dev": "nuxt test/fixture",
-    "lint": "eslint --ext .js,.vue lib",
-    "new-version": "standard-version",
-    "release": "git push --follow-tags && npm publish",
-    "bot-regex": "node scripts/create-bots-regex.js",
-    "test": "jest test"
-  },
-  "devDependencies": {
-    "@nuxtjs/eslint-config": "^9.0.0",
-    "@nuxtjs/module-test-utils": "^1.6.3",
-    "eslint": "^8.12.0",
-    "jest": "^27.5.1",
-    "jsdom": "^19.0.0",
-    "node-fetch": "^2.6.7",
-    "nuxt-edge": "^2.15.0-26889155.dd0eea40",
-    "standard-version": "^9.3.2"
-  },
-  "publishConfig": {
-    "access": "public"
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
+    "@nuxt/kit": "^3.0.0-rc.3",
     "defu": "^6.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "eslint": "latest",
+    "nuxt": "^3.0.0-rc.3"
   }
 }
