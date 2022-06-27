@@ -6,4 +6,3 @@ node_modules
 .vscode
 .DS_STORE
 coverage
-dist
