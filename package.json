@@ -24,13 +24,13 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.3",
+    "@nuxt/kit": "^3.0.0-rc.4",
     "defu": "^6.0.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
-    "nuxt": "^3.0.0-rc.3"
+    "nuxt": "3.0.0-rc.4"
   }
 }
