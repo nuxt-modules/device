@@ -1,6 +1,6 @@
 {
-  "name": "@nuxtjs/device",
-  "version": "2.1.0",
+  "name": "@nuxtjs/device-custom-isom",
+  "version": "1.0.0_rc1",
   "description": "Device detection module for Nuxt.js",
   "repository": "nuxt-community/device-module",
   "license": "MIT",
