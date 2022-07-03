@@ -59,10 +59,10 @@ function getBrowserName (a): string {
 }
 
 export default function generateFlags (headers, userAgent): Device {
-  let mobile = null
-  let mobileOrTablet = null
-  let ios = null
-  let android = null
+  let mobile = false
+  let mobileOrTablet = false
+  let ios = false
+  let android = false
 
   if (userAgent === 'Amazon CloudFront') {
     if (headers['cloudfront-is-mobile-viewer'] === 'true') {
