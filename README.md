@@ -59,6 +59,7 @@ $device.isDesktopOrTablet
 $device.isIos
 $device.isWindows
 $device.isMacOS
+$device.isApple
 $device.isAndroid
 $device.isFirefox
 $device.isEdge

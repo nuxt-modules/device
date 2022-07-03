@@ -9,6 +9,7 @@ export interface Device {
     isTablet: boolean
     isWindows: boolean
     isMacOS: boolean
+    isApple: boolean
     isSafari: boolean
     isFirefox: boolean
     isEdge: boolean

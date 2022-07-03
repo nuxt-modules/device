@@ -90,6 +90,7 @@ export default function generateFlags(headers, userAgent) {
     isAndroid: android,
     isWindows: windows,
     isMacOS: macOS,
+    isApple: macOS || ios,
     isDesktopOrTablet: !mobile,
     isSafari,
     isFirefox,
