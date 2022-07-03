@@ -1,4 +1,22 @@
-import type { Device } from './types'
+export type Device = {
+  userAgent: string
+  isDesktop: boolean
+  isIos: boolean
+  isAndroid: boolean
+  isMobile: boolean
+  isMobileOrTablet: boolean
+  isDesktopOrTablet: boolean
+  isTablet: boolean
+  isWindows: boolean
+  isMacOS: boolean
+  isApple: boolean
+  isSafari: boolean
+  isFirefox: boolean
+  isEdge: boolean
+  isChrome: boolean
+  isSamsung: boolean
+  isCrawler: boolean
+}
 
 // eslint-disable-next-line
 const REGEX_MOBILE1 = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|FBAN|FBAV|fennec|hiptop|iemobile|ip(hone|od)|Instagram|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i

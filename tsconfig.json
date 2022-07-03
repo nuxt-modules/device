@@ -1,24 +1,3 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "target": "ESNext",
-        "module": "ESNext",
-        "moduleResolution": "Node",
-        "skipLibCheck": true,
-        "strict": false,
-        "allowJs": true,
-        "noEmit": true,
-        "resolveJsonModule": true,
-        "allowSyntheticDefaultImports": true,
-        "types": [
-            "node",
-            "@nuxt/kit"
-        ],
-        "paths": {
-            "#app": ["./node_modules/nuxt/dist/app"]
-        }
-    },
-    "include": [
-        "src"
-    ]
+    "extends": "./playground/.nuxt/tsconfig.json"
 }
