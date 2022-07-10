@@ -48,10 +48,6 @@ export default defineNuxtModule<ModuleOptions>({
         refreshOnResize: options.refreshOnResize
       })
 
-      nuxt.hook('prepare:types', (options) => {
-        options.references.push({ path: resolve(nuxt.options.buildDir, 'runtime/generateFlags.d.ts') })
-      })
-
       const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
       nuxt.options.build.transpile.push(runtimeDir)
       addPlugin(resolve(runtimeDir, 'plugin'))
