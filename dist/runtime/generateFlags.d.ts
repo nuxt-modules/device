@@ -1,2 +1,2 @@
 import type { Device } from './types';
-export default function generateFlags(headers: any, userAgent: any): Device;
+export default function generateFlags(headers: any, userAgent: string): Device;
