@@ -8,7 +8,7 @@ const module = defineNuxtModule({
     name: "device-module",
     configKey: "device",
     compatibility: {
-      nuxt: "^3.0.0-rc.10 || ^2.16.0",
+      nuxt: "^3.0.0-rc.11 || ^2.16.0",
       bridge: true
     }
   },
