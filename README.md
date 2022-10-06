@@ -20,31 +20,17 @@ yarn add --dev @nuxtjs/device
 npm install -D @nuxtjs/device
 ```
 
-Add it to the `buildModules` section of your `nuxt.config`:
+Add it to the `modules` section of your `nuxt.config`:
 
 ```js
 {
-  buildModules: [
+  modules: [
    '@nuxtjs/device',
   ]
 }
 ```
 
 That's it, you can now use `$device` in your [Nuxt](https://nuxtjs.org) app ✨
-
-## TypeScript support
-
-Add the types to your `"types"` array in `tsconfig.json` after the `@nuxt/types` entry.
-
-:warning: Use `@nuxt/vue-app` instead of `@nuxt/types` for nuxt < 2.9.
-
-```json
-{
-  "compilerOptions": {
-    "types": ["@nuxt/types", "@nuxtjs/device"]
-  }
-}
-```
 
 ## Flags
 
@@ -72,6 +58,17 @@ $device.isCrawler
 The user agent is also injected an accessible with `$device.userAgent`.
 
 ## Usage
+
+### Composable
+
+You can use the `useDevice()` composable inside a `script setup` to access the flags.
+
+```js
+<script setup>
+const { isMobile } = useDevice();
+</script>
+```
+
 
 ### Switch a view
 
@@ -118,7 +115,7 @@ export default function ({ $device }) {
 
 ```js
 {
-  buildModules: ['@nuxtjs/device'],
+  modules: ['@nuxtjs/device'],
   device: {
     defaultUserAgent: 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Mobile Safari/537.36'
   }
@@ -129,7 +126,7 @@ export default function ({ $device }) {
 
 ```js
 {
-  buildModules: ['@nuxtjs/device'],
+  modules: ['@nuxtjs/device'],
   device: {
     refreshOnResize: true
   }
