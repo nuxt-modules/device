@@ -27,6 +27,9 @@ const module = defineNuxtModule({
       const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
       nuxt.options.build.transpile.push(runtimeDir);
       addPlugin(resolve(runtimeDir, "plugin"));
+      nuxt.hook("imports:dirs", (dirs) => {
+        dirs.push(resolve(runtimeDir, "composables"));
+      });
     }
   }
 });
