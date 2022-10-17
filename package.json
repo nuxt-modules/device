@@ -21,7 +21,8 @@
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "bot-regex": "node scripts/create-bots-regex.js"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.11",
@@ -31,6 +32,7 @@
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
+    "node-fetch": "^3.2.10",
     "nuxt": "^3.0.0-rc.11",
     "typescript": "^4.8.3"
   }
