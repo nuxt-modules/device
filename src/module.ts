@@ -1,6 +1,5 @@
 import { resolve } from 'path'
 import { fileURLToPath } from 'url'
-import { defu } from 'defu'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
 
 export interface ModuleOptions {
@@ -31,7 +30,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'device-module',
     configKey: 'device',
     compatibility: {
-      nuxt: '^3.0.0-rc.11 || ^2.16.0',
+      nuxt: '^3.0.0-rc.5 || ^2.16.0',
       bridge: true
     }
   },
@@ -42,12 +41,6 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup (options, nuxt) {
     if (options.enabled) {
-      nuxt.options.runtimeConfig.public.device = defu(nuxt.options.runtimeConfig.public.device, {
-        enabled: options.enabled,
-        defaultUserAgent: options.defaultUserAgent,
-        refreshOnResize: options.refreshOnResize
-      })
-
       const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
       nuxt.options.build.transpile.push(runtimeDir)
       addPlugin(resolve(runtimeDir, 'plugin'))
