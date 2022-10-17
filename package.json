@@ -22,7 +22,8 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "bot-regex": "node scripts/create-bots-regex.js"
+    "bot-regex": "node scripts/create-bots-regex.js",
+    "test": "NUXT_TELEMETRY_DISABLED=1 pnpm nuxi prepare test/fixtures && JITI_ESM_RESOLVE=1 vitest run --dir test"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.11",
@@ -30,10 +31,14 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
+    "@nuxt/test-utils-edge": "^3.0.0-rc.12-27766944.63d778b",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
+    "jsdom": "^20.0.1",
     "node-fetch": "^3.2.10",
     "nuxt": "^3.0.0-rc.11",
-    "typescript": "^4.8.3"
+    "playwright": "^1.27.1",
+    "typescript": "^4.8.3",
+    "vitest": "^0.24.3"
   }
 }
