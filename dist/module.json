@@ -1,9 +1,0 @@
-{
-  "name": "device-module",
-  "configKey": "device",
-  "compatibility": {
-    "nuxt": "^3.0.0-rc.5 || ^2.16.0",
-    "bridge": true
-  },
-  "version": "3.0.0"
-}
