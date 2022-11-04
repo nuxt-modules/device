@@ -25,7 +25,7 @@
     "new-version": "standard-version",
     "release": "git push --follow-tags && npm publish",
     "bot-regex": "node scripts/create-bots-regex.js",
-    "test": "yarn nuxi prepare test/fixtures NUXT_TELEMETRY_DISABLED=1 && JITI_ESM_RESOLVE=1 vitest run --dir test"
+    "test": "yarn nuxi prepare test/fixtures NUXT_TELEMETRY_DISABLED=1 && vitest run --dir test"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.12",
