@@ -6,4 +6,5 @@ node_modules
 .vscode
 .DS_STORE
 coverage
+.output
 dist
