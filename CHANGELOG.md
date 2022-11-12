@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/nuxt-community/device-module/compare/v2.1.0...v3.0.0) (2022-11-12)
+
+### Features
+
+ * Nuxt3 support (#119)
+
 ## [2.1.0](https://github.com/nuxt-community/device-module/compare/v2.0.1...v2.1.0) (2021-04-12)
 
 
