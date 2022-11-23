@@ -10,7 +10,9 @@ This module injects flags that indicate a device type into the context and the c
 
 See [demo on CodeSandbox](https://codesandbox.io/s/github/nuxt-community/device-module).
 
-## Setup
+## Setup for Nuxt3
+
+If you use Nuxt2.x use [@nuxtjs/device 2.x](https://github.com/nuxt-community/device-module/tree/v2.1.0).
 
 Add `@nuxtjs/device` to the dev dependencies using yarn or npm to your project.
 
