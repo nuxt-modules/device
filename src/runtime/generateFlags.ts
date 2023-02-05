@@ -73,6 +73,16 @@ export default function generateFlags (headers, userAgent: string): Device {
       mobile = false
       mobileOrTablet = true
     }
+    if (headers['cloudfront-is-desktop-viewer'] === 'true') {
+      mobile = false
+      mobileOrTablet = false
+    }
+    if (headers['cloudfront-is-ios-viewer'] === 'true') {
+      ios = true
+    }
+    if (headers['cloudfront-is-android-viewer'] === 'true') {
+      android = true
+    }
   } else if (headers && headers['cf-device-type']) { // Cloudflare
     switch (headers['cf-device-type']) {
       case 'mobile':
