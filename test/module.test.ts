@@ -232,6 +232,42 @@ describe('ssr', async () => {
     })
   })
 
+  it('detects cloudfront headers - desktop', async () => {
+    const html = await $fetch('/', {
+      headers: {
+        'User-Agent': 'Amazon CloudFront',
+        'Cloudfront-Is-Desktop-Viewer': 'true'
+      }
+    })
+    const { isDesktop } = parseHtml(html)
+
+    expect(isDesktop).toEqual(true)
+  })
+
+  it('detects cloudfront headers - ios', async () => {
+    const html = await $fetch('/', {
+      headers: {
+        'User-Agent': 'Amazon CloudFront',
+        'Cloudfront-Is-Ios-Viewer': 'true'
+      }
+    })
+    const { isIos } = parseHtml(html)
+
+    expect(isIos).toEqual(true)
+  })
+
+  it('detects cloudfront headers - android', async () => {
+    const html = await $fetch('/', {
+      headers: {
+        'User-Agent': 'Amazon CloudFront',
+        'Cloudfront-Is-Android-Viewer': 'true'
+      }
+    })
+    const { isAndroid } = parseHtml(html)
+
+    expect(isAndroid).toEqual(true)
+  })
+
   it('detects cloudflare headers - mobile', async () => {
     const html = await $fetch('/', {
       headers: {
