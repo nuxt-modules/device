@@ -320,9 +320,9 @@ describe('ssr', async () => {
         'cf-device-type': 'desktop'
       }
     })
-    const { isMobile, isMobileOrTablet } = parseHtml(html)
+    const { isDesktop } = parseHtml(html)
 
-    expect({ isMobile, isMobileOrTablet }).toEqual({ isMobile: false, isMobileOrTablet: false })
+    expect(isDesktop).toEqual(true)
   })
 
   it('detects crawlers - googlebots', async () => {
@@ -347,6 +347,7 @@ describe('ssr', async () => {
       }
     })
     const { isCrawler } = parseHtml(html)
+
     expect(isCrawler).toEqual(true)
   })
 
@@ -359,6 +360,7 @@ describe('ssr', async () => {
       }
     })
     const { isCrawler } = parseHtml(html)
+
     expect(isCrawler).toEqual(true)
   })
 })
