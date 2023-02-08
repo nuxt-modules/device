@@ -136,12 +136,23 @@ describe('Device module', () => {
   it('detects cloudflare headers', () => {
     headers['cf-device-type'] = 'mobile'
     expect(extractDevices(ctx, '')).toEqual({ mobile: true, mobileOrTablet: true, ...defaultOsSettings, ...defaultBrowserFlags })
+  })
 
-    headers['cf-device-type'] = 'tablet'
-    expect(extractDevices(ctx, '')).toEqual({ mobile: false, mobileOrTablet: true, ...defaultOsSettings, ...defaultBrowserFlags })
+  describe('detects cloudflare headers', () => {
+    it('mobile', () => {
+      headers['cf-device-type'] = 'mobile'
+      expect(extractDevices(ctx, '')).toEqual({ mobile: true, mobileOrTablet: true, ...defaultOsSettings, ...defaultBrowserFlags })
+    })
 
-    headers['cf-device-type'] = 'desktop'
-    expect(extractDevices(ctx, '')).toEqual({ mobile: false, mobileOrTablet: false, ...defaultOsSettings, ...defaultBrowserFlags })
+    it('tablet', () => {
+      headers['cf-device-type'] = 'tablet'
+      expect(extractDevices(ctx, '')).toEqual({ mobile: false, mobileOrTablet: true, ...defaultOsSettings, ...defaultBrowserFlags })
+    })
+
+    it('desktop', () => {
+      headers['cf-device-type'] = 'desktop'
+      expect(extractDevices(ctx, '')).toEqual({ mobile: false, mobileOrTablet: false, ...defaultOsSettings, ...defaultBrowserFlags })
+    })
   })
 
   it('detects crawlers', () => {
