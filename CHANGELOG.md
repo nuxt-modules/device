@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/nuxt-community/device-module/compare/v3.0.0...v3.1.0) (2023-02-08)
+
+
+### Features
+
+* **cloudfront:** extend device type detection ([beb89ea](https://github.com/nuxt-community/device-module/commit/beb89eae5bb05d8e5a5417e1307b0c07f93a0a00))
+
 ## [3.0.0](https://github.com/nuxt-community/device-module/compare/v2.1.0...v3.0.0) (2022-11-12)
 
 ### Features
