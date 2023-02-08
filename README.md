@@ -137,15 +137,21 @@ export default function ({ $device }) {
 Note that the default user agent value is set to `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36`.
 ## CloudFront Support
 
-If a user-agent is `Amazon CloudFront`, this module checks
-the both headers `CloudFront-Is-Mobile-Viewer` and `CloudFront-Is-Tablet-Viewer`.
+If the `user-agent` is `Amazon CloudFront`, this module checks the following headers :  
 
-Here are the details about the headers:
-https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-device
+- `CloudFront-Is-Mobile-Viewer`
+- `CloudFront-Is-Tablet-Viewer`
+- `CloudFront-Is-Desktop-Viewer`
+- `CloudFront-Is-Ios-Viewer`
+- `CloudFront-Is-Android-Viewer`
+
+Here are the details about the headers:  
+[Amazon CloudFront - Headers for determining the viewer's device type
+](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-cloudfront-headers.html#cloudfront-headers-device-type)  
 
 ### Caution
 
-`isIos`, `isWindows` and `isMacOS` flags are not available with CloudFront.
+`isWindows` and `isMacOS` flags are not available with CloudFront.
 
 ## Cloudflare Support
 
