@@ -133,15 +133,50 @@ describe('Device module', () => {
     })
   })
 
-  it('detects cloudflare headers', () => {
-    headers['cf-device-type'] = 'mobile'
-    expect(extractDevices(ctx, '')).toEqual({ mobile: true, mobileOrTablet: true, ...defaultOsSettings, ...defaultBrowserFlags })
+  describe('detects cloudfront headers', () => {
+    const userAgent = 'Amazon CloudFront';
 
-    headers['cf-device-type'] = 'tablet'
-    expect(extractDevices(ctx, '')).toEqual({ mobile: false, mobileOrTablet: true, ...defaultOsSettings, ...defaultBrowserFlags })
+    it('mobile', () => {
+      headers['cloudfront-is-mobile-viewer'] = 'true'
+      expect(extractDevices(ctx, userAgent)).toEqual({ mobile: true, mobileOrTablet: true, ...defaultOsSettings, ...defaultBrowserFlags })
+    });
 
-    headers['cf-device-type'] = 'desktop'
-    expect(extractDevices(ctx, '')).toEqual({ mobile: false, mobileOrTablet: false, ...defaultOsSettings, ...defaultBrowserFlags })
+    it('tablet', () => {
+      headers['cloudfront-is-tablet-viewer'] = 'true'
+      expect(extractDevices(ctx, userAgent)).toEqual({ mobile: false, mobileOrTablet: true, ...defaultOsSettings, ...defaultBrowserFlags })
+    })
+
+    it('desktop', () => {
+      headers['cloudfront-is-desktop-viewer'] = 'true'
+      expect(extractDevices(ctx, userAgent)).toEqual({ mobile: false, mobileOrTablet: false, ...defaultOsSettings, ...defaultBrowserFlags })
+    })
+
+    it('ios', () => {
+      headers['cloudfront-is-ios-viewer'] = 'true'
+      expect(extractDevices(ctx, userAgent)).toEqual({ ...defaultOsSettings, ...defaultBrowserFlags, mobile: null, mobileOrTablet: null, ios: true })
+    })
+
+    it('android', () => {
+      headers['cloudfront-is-android-viewer'] = 'true'
+      expect(extractDevices(ctx, userAgent)).toEqual({ ...defaultOsSettings, ...defaultBrowserFlags, mobile: null, mobileOrTablet: null, android: true })
+    })
+  })
+
+  describe('detects cloudflare headers', () => {
+    it('mobile', () => {
+      headers['cf-device-type'] = 'mobile'
+      expect(extractDevices(ctx, '')).toEqual({ mobile: true, mobileOrTablet: true, ...defaultOsSettings, ...defaultBrowserFlags })
+    })
+
+    it('tablet', () => {
+      headers['cf-device-type'] = 'tablet'
+      expect(extractDevices(ctx, '')).toEqual({ mobile: false, mobileOrTablet: true, ...defaultOsSettings, ...defaultBrowserFlags })
+    })
+
+    it('desktop', () => {
+      headers['cf-device-type'] = 'desktop'
+      expect(extractDevices(ctx, '')).toEqual({ mobile: false, mobileOrTablet: false, ...defaultOsSettings, ...defaultBrowserFlags })
+    })
   })
 
   it('detects crawlers', () => {
