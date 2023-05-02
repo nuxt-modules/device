@@ -1094,7 +1094,7 @@ __metadata:
     "@nuxt/module-builder": latest
     "@nuxt/test-utils": ^3.4.3
     "@nuxtjs/eslint-config-typescript": latest
-    defu: ^6.1.0
+    defu: ^6.1.2
     eslint: latest
     jsdom: ^20.0.2
     node-fetch: ^3.3.0
@@ -3413,7 +3413,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defu@npm:^6.0.0, defu@npm:^6.1.0":
+"defu@npm:^6.0.0":
   version: 6.1.0
   resolution: "defu@npm:6.1.0"
   checksum: 403a9ba8ab08dca87576eb062fa488c5cc58a5c8601955f2325dcc077c23da8a68169591505654a8c70ca3567006516ef92a4c44129643f928c58c4e7281195a
