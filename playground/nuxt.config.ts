@@ -1,4 +1,4 @@
-import device from '..'
+import device from '../src/module'
 
 export default defineNuxtConfig({
   modules: [
