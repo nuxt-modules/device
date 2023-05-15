@@ -1,4 +1,4 @@
-export type Device = {
+export interface Device {
     userAgent: string
     isDesktop: boolean
     isIos: boolean
@@ -16,4 +16,4 @@ export type Device = {
     isChrome: boolean
     isSamsung: boolean
     isCrawler: boolean
-  }
+  } 
