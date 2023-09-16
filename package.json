@@ -42,7 +42,7 @@
     "@nuxtjs/eslint-config-typescript": "latest",
     "cross-env": "^7.0.3",
     "eslint": "latest",
-    "jsdom": "^20.0.2",
+    "jsdom": "^22.0.0",
     "node-fetch": "^3.3.0",
     "nuxt": "^3.7.3",
     "playwright": "^1.27.1",
