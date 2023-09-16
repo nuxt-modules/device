@@ -14,7 +14,7 @@
     "dev": "nuxt test/fixture",
     "lint": "eslint --ext .js,.vue lib",
     "new-version": "standard-version",
-    "release": "git push --follow-tags && npm publish",
+    "release": "git push --follow-tags && npm publish --tag=2x",
     "bot-regex": "node scripts/create-bots-regex.js",
     "test": "jest test"
   },
