@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/nuxt-community/device-module/compare/v2.1.0...v2.3.0) (2023-09-16)
+
+
+### Features
+
+* **cloudfront:** extend device detection - rm cloudfront from crawler's regex ([8d6c5b5](https://github.com/nuxt-community/device-module/commit/8d6c5b50e37e6a01ad02ffb6a4823f4d14e36bc9))
+
 ## [2.2.0](https://github.com/nuxt-community/device-module/compare/v2.1.0...v2.2.0) (2023-09-16)
 
 
