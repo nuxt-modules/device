@@ -30,7 +30,7 @@
     "new-version": "standard-version",
     "release": "git push --follow-tags && npm publish",
     "bot-regex": "node scripts/create-bots-regex.js",
-    "test": "cross-env NUXT_TELEMETRY_DISABLED=1 yarn nuxi prepare test/fixtures && JITI_ESM_RESOLVE=1 vitest run --dir test"
+    "test": "cross-env NUXT_TELEMETRY_DISABLED=1 yarn nuxi prepare test/fixtures && cross-env JITI_ESM_RESOLVE=1 vitest run --dir test"
   },
   "dependencies": {
     "@nuxt/kit": "^3.7.3",
