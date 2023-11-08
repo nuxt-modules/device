@@ -1,4 +1,4 @@
-import { defineNuxtPlugin, useRuntimeConfig, useRequestHeaders } from '#app'
+import { defineNuxtPlugin, useRuntimeConfig, useRequestHeaders } from '#imports'
 import { reactive } from 'vue'
 import generateFlags from './generateFlags'
 

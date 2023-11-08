@@ -1,4 +1,4 @@
-import { useNuxtApp } from '#app'
+import { useNuxtApp } from '#imports'
 import type { Device } from '../types'
 
 export const useDevice = (): Device => {
