@@ -37,7 +37,7 @@
     "defu": "^6.1.2"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "latest",
+    "@nuxt/module-builder": "0.5.4",
     "@nuxt/test-utils": "^3.7.3",
     "@nuxtjs/eslint-config-typescript": "latest",
     "cross-env": "^7.0.3",
