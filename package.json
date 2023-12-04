@@ -26,7 +26,7 @@
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "new-version": "standard-version",
     "release": "git push --follow-tags && npm publish",
     "bot-regex": "node scripts/create-bots-regex.js",
