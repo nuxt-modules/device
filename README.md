@@ -16,9 +16,7 @@ If you use Nuxt2.x use [@nuxtjs/device 2.x](https://github.com/nuxt-community/de
 Add `@nuxtjs/device` to the dev dependencies using yarn or npm to your project.
 
 ```bash
-yarn add --dev @nuxtjs/device
-# Using npm
-npm install -D @nuxtjs/device
+npx nuxi@latest module add device
 ```
 
 Add it to the `modules` section of your `nuxt.config`:
