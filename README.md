@@ -15,8 +15,6 @@ See [demo on CodeSandbox](https://codesandbox.io/s/github/nuxt-community/device-
 npx nuxi@latest module add device
 ```
 
-That's it, you can now use `$device` in your [Nuxt](https://nuxtjs.org) app ✨
-
 > [!NOTE]
 > You can find the Nuxt 2 version of the module on the [`2.x` branch](https://github.com/nuxt-community/device-module/tree/v2.1.0).
 
