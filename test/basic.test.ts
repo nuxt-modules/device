@@ -1,12 +1,12 @@
-import { fileURLToPath } from 'node:url'
 import { describe, it, expect } from 'vitest'
 import { setup, $fetch } from '@nuxt/test-utils'
+import { createResolver } from '@nuxt/kit'
 
-function findTrueOrFalse (objectToParse, input) {
-  return objectToParse[objectToParse.indexOf(input) + input.length] === '✅'
+function findTrueOrFalse(html: string, input: string) {
+  return html[html.indexOf(input) + input.length] === '✅'
 }
 
-function parseHtml (html) {
+function parseHtml(html: string) {
   return {
     isDesktop: findTrueOrFalse(html, 'isDesktop: '),
     isMobile: findTrueOrFalse(html, 'isMobile: '),
@@ -23,15 +23,17 @@ function parseHtml (html) {
     isChrome: findTrueOrFalse(html, 'isChrome: '),
     isSafari: findTrueOrFalse(html, 'isSafari: '),
     isSamsung: findTrueOrFalse(html, 'isSamsung: '),
-    isCrawler: findTrueOrFalse(html, 'isCrawler: ')
+    isCrawler: findTrueOrFalse(html, 'isCrawler: '),
   }
 }
 
+const { resolve } = createResolver(import.meta.url)
+
 describe('ssr', async () => {
   await setup({
-    rootDir: fileURLToPath(new URL('./fixtures', import.meta.url)),
+    rootDir: resolve('fixtures/basic'),
     server: true,
-    browser: true
+    browser: true,
   })
 
   it('renders the index page', async () => {
@@ -63,8 +65,8 @@ describe('ssr', async () => {
 
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
 
       const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isChrome } = parseHtml(html)
@@ -77,8 +79,8 @@ describe('ssr', async () => {
 
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
 
       const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari } = parseHtml(html)
@@ -91,8 +93,8 @@ describe('ssr', async () => {
 
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
       const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isChrome } = parseHtml(html)
 
@@ -104,8 +106,8 @@ describe('ssr', async () => {
 
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
       const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isEdge } = parseHtml(html)
 
@@ -117,8 +119,8 @@ describe('ssr', async () => {
 
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
       const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari } = parseHtml(html)
 
@@ -132,8 +134,8 @@ describe('ssr', async () => {
 
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
       const { isChrome, isFirefox, isEdge, isSafari, isSamsung } = parseHtml(html)
 
@@ -148,8 +150,8 @@ describe('ssr', async () => {
 
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
       const { isChrome, isFirefox, isEdge, isSafari, isSamsung } = parseHtml(html)
 
@@ -163,8 +165,8 @@ describe('ssr', async () => {
       const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 Edg/81.0.416.72'
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
       const { isChrome, isFirefox, isEdge, isSafari, isSamsung } = parseHtml(html)
       expect(isChrome).toEqual(false)
@@ -177,8 +179,8 @@ describe('ssr', async () => {
       const userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1'
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
       const { isChrome, isFirefox, isEdge, isSafari, isSamsung } = parseHtml(html)
       expect(isChrome).toEqual(false)
@@ -191,8 +193,8 @@ describe('ssr', async () => {
       const userAgent = 'Mozilla/5.0 (Linux; Android 10; SAMSUNG SM-A515F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/12.1 Chrome/79.0.3945.136 Mobile Safari/537.36'
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
       const { isChrome, isFirefox, isEdge, isSafari, isSamsung } = parseHtml(html)
       expect(isChrome).toEqual(false)
@@ -205,26 +207,26 @@ describe('ssr', async () => {
 
   describe('detects an-app browser', () => {
     it('Instagram', async () => {
-      const userAgent =
-        'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15A372 Instagram'
+      const userAgent
+          = 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15A372 Instagram'
 
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
       const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari } = parseHtml(html)
 
       expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari }).toEqual({ isMobile: true, isMobileOrTablet: true, isAndroid: false, isIos: true, isMacOS: true, isWindows: false, isSafari: true })
     })
     it('Facebook', async () => {
-      const userAgent =
-        'Mozilla/5.0 ((iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit (KHTML, like Gecko) Mobile [FBAN/FBForIPhone;FBAV/4.1;FBBV/4100.0;FBDV/iPhone3,1;FBMD/iPhone;FBSN/iPhone OS;FBSV/5.1.1;FBSS/2; tablet;FBLC/en_US]'
+      const userAgent
+          = 'Mozilla/5.0 ((iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit (KHTML, like Gecko) Mobile [FBAN/FBForIPhone;FBAV/4.1;FBBV/4100.0;FBDV/iPhone3,1;FBMD/iPhone;FBSN/iPhone OS;FBSV/5.1.1;FBSS/2; tablet;FBLC/en_US]'
 
       const html = await $fetch('/', {
         headers: {
-          'User-Agent': userAgent
-        }
+          'User-Agent': userAgent,
+        },
       })
       const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari } = parseHtml(html)
 
@@ -236,8 +238,8 @@ describe('ssr', async () => {
     const html = await $fetch('/', {
       headers: {
         'User-Agent': 'Amazon CloudFront',
-        'Cloudfront-Is-Mobile-Viewer': 'true'
-      }
+        'Cloudfront-Is-Mobile-Viewer': 'true',
+      },
     })
     const { isMobile, isMobileOrTablet } = parseHtml(html)
 
@@ -248,8 +250,8 @@ describe('ssr', async () => {
     const html = await $fetch('/', {
       headers: {
         'User-Agent': 'Amazon CloudFront',
-        'Cloudfront-Is-Tablet-Viewer': 'true'
-      }
+        'Cloudfront-Is-Tablet-Viewer': 'true',
+      },
     })
     const { isMobile, isMobileOrTablet } = parseHtml(html)
 
@@ -260,8 +262,8 @@ describe('ssr', async () => {
     const html = await $fetch('/', {
       headers: {
         'User-Agent': 'Amazon CloudFront',
-        'Cloudfront-Is-Desktop-Viewer': 'true'
-      }
+        'Cloudfront-Is-Desktop-Viewer': 'true',
+      },
     })
     const { isDesktop } = parseHtml(html)
 
@@ -272,8 +274,8 @@ describe('ssr', async () => {
     const html = await $fetch('/', {
       headers: {
         'User-Agent': 'Amazon CloudFront',
-        'Cloudfront-Is-Ios-Viewer': 'true'
-      }
+        'Cloudfront-Is-Ios-Viewer': 'true',
+      },
     })
     const { isIos } = parseHtml(html)
 
@@ -284,8 +286,8 @@ describe('ssr', async () => {
     const html = await $fetch('/', {
       headers: {
         'User-Agent': 'Amazon CloudFront',
-        'Cloudfront-Is-Android-Viewer': 'true'
-      }
+        'Cloudfront-Is-Android-Viewer': 'true',
+      },
     })
     const { isAndroid } = parseHtml(html)
 
@@ -295,8 +297,8 @@ describe('ssr', async () => {
   it('detects cloudflare headers - mobile', async () => {
     const html = await $fetch('/', {
       headers: {
-        'cf-device-type': 'mobile'
-      }
+        'cf-device-type': 'mobile',
+      },
     })
     const { isMobile, isMobileOrTablet } = parseHtml(html)
 
@@ -306,8 +308,8 @@ describe('ssr', async () => {
   it('detects cloudflare headers - tablet', async () => {
     const html = await $fetch('/', {
       headers: {
-        'cf-device-type': 'tablet'
-      }
+        'cf-device-type': 'tablet',
+      },
     })
     const { isMobile, isMobileOrTablet } = parseHtml(html)
 
@@ -317,8 +319,8 @@ describe('ssr', async () => {
   it('detects cloudflare headers - desktop', async () => {
     const html = await $fetch('/', {
       headers: {
-        'cf-device-type': 'desktop'
-      }
+        'cf-device-type': 'desktop',
+      },
     })
     const { isDesktop } = parseHtml(html)
 
@@ -330,8 +332,8 @@ describe('ssr', async () => {
 
     const html = await $fetch('/', {
       headers: {
-        'User-Agent': googlebots
-      }
+        'User-Agent': googlebots,
+      },
     })
     const { isCrawler } = parseHtml(html)
 
@@ -343,8 +345,8 @@ describe('ssr', async () => {
 
     const html = await $fetch('/', {
       headers: {
-        'User-Agent': yahoobots
-      }
+        'User-Agent': yahoobots,
+      },
     })
     const { isCrawler } = parseHtml(html)
 
@@ -356,8 +358,8 @@ describe('ssr', async () => {
 
     const html = await $fetch('/', {
       headers: {
-        'User-Agent': biduspider
-      }
+        'User-Agent': biduspider,
+      },
     })
     const { isCrawler } = parseHtml(html)
 

@@ -1,0 +1,8 @@
+{
+    "private": true,
+    "name": "basic",
+    "type": "module",
+    "dependencies": {
+        "@nuxtjs/device": "latest"
+    }
+}
