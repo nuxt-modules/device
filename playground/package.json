@@ -1,4 +1,13 @@
 {
   "private": true,
-  "name": "device-module-playground"
+  "name": "nuxt-device-playground",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "dependencies": {
+    "@nuxtjs/device": "latest"
+  }
 }
