@@ -16,7 +16,7 @@ npx nuxi@latest module add device
 ```
 
 > [!NOTE]
-> You can find the Nuxt 2 version of the module on the [`2.x` branch](https://github.com/nuxt-community/device-module/tree/v2.1.0).
+> You can find the Nuxt 2 version of the module on the [`2.x` branch](https://github.com/nuxt-modules/device/tree/2.x).
 
 ## Flags
 
@@ -171,4 +171,3 @@ https://support.cloudflare.com/hc/en-us/articles/229373388-Cache-Content-by-Devi
 ## Data Source
 
 This module uses [crawler-user-agents](https://github.com/monperrus/crawler-user-agents) to generate the regular expression that detect a crawler.
-
