@@ -1,14 +1,49 @@
+# Dependencies
 node_modules
+jspm_packages
+
+# Logs
+*.log
+
+# Temp directories
+.temp
+.tmp
+.cache
+
+# Generated dirs
+dist
+.nuxt
+.output
+
+# VSCode
+.vscode
+
+# Intellij idea
 *.iml
 .idea
-*.log*
-.nuxt
-.vscode
-.DS_STORE
-coverage
-.output
-dist
 
-# Yarn
-**/.yarn/cache
-**/.yarn/*state*
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+.env
+
+.pnpm-store
+.eslintcache
