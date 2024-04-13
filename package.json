@@ -19,12 +19,12 @@
     "test": "jest test"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "6.0.0",
+    "@nuxtjs/eslint-config": "6.0.1",
     "@nuxtjs/module-test-utils": "1.6.3",
-    "eslint": "7.24.0",
+    "eslint": "7.32.0",
     "jest": "26.6.3",
-    "jsdom": "16.5.2",
-    "node-fetch": "2.6.1",
+    "jsdom": "16.7.0",
+    "node-fetch": "2.7.0",
     "nuxt-edge": "2.15.0-26889155.dd0eea40",
     "standard-version": "9.5.0"
   },
