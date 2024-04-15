@@ -8,6 +8,6 @@
     "generate": "nuxi generate"
   },
   "dependencies": {
-    "@nuxtjs/device": "latest"
+    "@nuxtjs/device": "workspace:*"
   }
 }

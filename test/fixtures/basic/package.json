@@ -3,6 +3,6 @@
     "name": "basic",
     "type": "module",
     "dependencies": {
-        "@nuxtjs/device": "latest"
+        "@nuxtjs/device": "workspace:*"
     }
 }
