@@ -1,11 +1,13 @@
-# @nuxtjs/device
+![Nuxt banner](./.github/assets/banner.png)
+
+# Nuxt Device
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-This module injects flags that indicate a device type into the context and the component instance.
+Detect the type of device in your Nuxt applications.
 
 See [demo on CodeSandbox](https://codesandbox.io/s/github/nuxt-community/device-module).
 
