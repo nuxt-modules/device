@@ -55,7 +55,7 @@ function getBrowserName(a: string): string {
   return ''
 }
 
-export default function generateFlags(headers: Record<string, string>, userAgent: string): Device {
+export default function generateFlags(userAgent: string, headers: Record<string, string> = {}): Device {
   let mobile = false
   let mobileOrTablet = false
   let ios = false

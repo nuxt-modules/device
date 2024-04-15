@@ -13,7 +13,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     const userAgent = headers['user-agent'] || defaultUserAgent
 
-    const flags = reactive(generateFlags(headers, userAgent))
+    const flags = reactive(generateFlags(userAgent, headers))
 
     return {
       provide: {
@@ -24,12 +24,12 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   // Client Side
   const userAgent = navigator.userAgent || defaultUserAgent
-  const flags = reactive(generateFlags({}, userAgent))
+  const flags = reactive(generateFlags(userAgent))
 
   if (config.public.device.refreshOnResize) {
     window.addEventListener('resize', () => {
       setTimeout(() => {
-        const newFlags = generateFlags({}, navigator.userAgent || userAgent)
+        const newFlags = generateFlags(navigator.userAgent || userAgent)
         Object.entries(newFlags).forEach(([key, value]) => {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (flags as any)[key] = value
