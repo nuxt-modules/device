@@ -43,6 +43,6 @@ export type Device = {
 
 declare module 'nuxt/schema' {
   interface PublicRuntimeConfig {
-    apiBase: ModuleOptions
+    device: ModuleOptions
   }
 }
