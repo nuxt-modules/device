@@ -1,39 +1,38 @@
-import { defineNuxtPlugin, useRuntimeConfig, useRequestHeaders } from '#imports'
 import { reactive } from 'vue'
 import generateFlags from './generateFlags'
+import { defineNuxtPlugin, useRuntimeConfig, useRequestHeaders } from '#imports'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig()
 
-  const DEFAULT_USER_AGENT = config.public.device.defaultUserAgent
-  const REFRESH_ON_RESIZE = config.public.device.refreshOnResize
+  const defaultUserAgent = config.public.device.defaultUserAgent
 
   // Server Side
   if (nuxtApp.ssrContext) {
     const headers = useRequestHeaders()
 
-    const userAgent = headers['user-agent'] || DEFAULT_USER_AGENT
+    const userAgent = headers['user-agent'] || defaultUserAgent
 
-    const flags = reactive(generateFlags(headers, userAgent))
+    const flags = reactive(generateFlags(userAgent, headers))
 
     return {
       provide: {
-        device: flags
-      }
+        device: flags,
+      },
     }
   }
 
   // Client Side
-  const userAgent = navigator.userAgent || DEFAULT_USER_AGENT
-  const flags = reactive(generateFlags({}, userAgent))
+  const userAgent = navigator.userAgent || defaultUserAgent
+  const flags = reactive(generateFlags(userAgent))
 
-  if (REFRESH_ON_RESIZE) {
+  if (config.public.device.refreshOnResize) {
     window.addEventListener('resize', () => {
       setTimeout(() => {
-        const newFlags = generateFlags({}, navigator.userAgent || DEFAULT_USER_AGENT)
-        Object.entries(newFlags).forEach((entry) => {
-          const [key, value] = entry
-          flags[key] = value
+        const newFlags = generateFlags(navigator.userAgent || userAgent)
+        Object.entries(newFlags).forEach(([key, value]) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (flags as any)[key] = value
         })
       }, 50)
     })
@@ -41,7 +40,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   return {
     provide: {
-      device: flags
-    }
+      device: flags,
+    },
   }
 })
