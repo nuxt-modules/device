@@ -28,8 +28,8 @@ importers:
         specifier: 0.5.5
         version: 0.5.5(@nuxt/kit@3.11.2(rollup@4.14.2))(nuxi@3.11.1)(typescript@5.4.5)
       '@nuxt/test-utils':
-        specifier: 3.12.0
-        version: 3.12.0(h3@1.11.1)(happy-dom@14.7.1)(playwright-core@1.43.1)(rollup@4.14.2)(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))(vitest@1.5.0(@types/node@20.12.7)(happy-dom@14.7.1)(terser@5.30.3))(vue-router@4.3.0(vue@3.4.21(typescript@5.4.5)))(vue@3.4.21(typescript@5.4.5))
+        specifier: 3.12.1
+        version: 3.12.1(h3@1.11.1)(happy-dom@14.7.1)(playwright-core@1.43.1)(rollup@4.14.2)(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))(vitest@1.5.0(@types/node@20.12.7)(happy-dom@14.7.1)(terser@5.30.3))(vue-router@4.3.0(vue@3.4.21(typescript@5.4.5)))(vue@3.4.21(typescript@5.4.5))
       changelogen:
         specifier: 0.5.5
         version: 0.5.5
@@ -753,8 +753,8 @@ packages:
     resolution: {integrity: sha512-KH6wxzsNys69daSO0xUv0LEBAfhwwjK1M+0Cdi1/vxmifCslMIY7lN11B4eywSfscbyVPAYJvANyc7XiVPImBQ==}
     hasBin: true
 
-  '@nuxt/test-utils@3.12.0':
-    resolution: {integrity: sha512-Q3HP53TDIYeqHT65r31HZhK/gRwVBmchSdVj1tfiYECyqstckvsQ4Cyt/GX/XmD7cLdD3d5aHow8LaMfP+BSqQ==}
+  '@nuxt/test-utils@3.12.1':
+    resolution: {integrity: sha512-VRLNcDz9Ad/4pjHdNRVLPs5DVIO5IJ0ij81PLmsE/lt+5oeeIQld+AgHgcqM4BM1YKsXTBuavbk1mEBqj7h/+A==}
     engines: {node: ^14.18.0 || >=16.10.0}
     peerDependencies:
       '@cucumber/cucumber': ^10.3.1
@@ -764,7 +764,7 @@ packages:
       '@vitest/ui': ^0.34.6 || ^1.0.0
       '@vue/test-utils': ^2.4.2
       h3: '*'
-      happy-dom: ^9.10.9 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
+      happy-dom: ^9.10.9 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
       jsdom: ^22.0.0 || ^23.0.0 || ^24.0.0
       playwright-core: ^1.34.3
       vite: '*'
@@ -5404,7 +5404,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@nuxt/test-utils@3.12.0(h3@1.11.1)(happy-dom@14.7.1)(playwright-core@1.43.1)(rollup@4.14.2)(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))(vitest@1.5.0(@types/node@20.12.7)(happy-dom@14.7.1)(terser@5.30.3))(vue-router@4.3.0(vue@3.4.21(typescript@5.4.5)))(vue@3.4.21(typescript@5.4.5))':
+  '@nuxt/test-utils@3.12.1(h3@1.11.1)(happy-dom@14.7.1)(playwright-core@1.43.1)(rollup@4.14.2)(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))(vitest@1.5.0(@types/node@20.12.7)(happy-dom@14.7.1)(terser@5.30.3))(vue-router@4.3.0(vue@3.4.21(typescript@5.4.5)))(vue@3.4.21(typescript@5.4.5))':
     dependencies:
       '@nuxt/kit': 3.11.2(rollup@4.14.2)
       '@nuxt/schema': 3.11.2(rollup@4.14.2)
@@ -9675,7 +9675,7 @@ snapshots:
 
   vitest-environment-nuxt@1.0.0(h3@1.11.1)(happy-dom@14.7.1)(playwright-core@1.43.1)(rollup@4.14.2)(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))(vitest@1.5.0(@types/node@20.12.7)(happy-dom@14.7.1)(terser@5.30.3))(vue-router@4.3.0(vue@3.4.21(typescript@5.4.5)))(vue@3.4.21(typescript@5.4.5)):
     dependencies:
-      '@nuxt/test-utils': 3.12.0(h3@1.11.1)(happy-dom@14.7.1)(playwright-core@1.43.1)(rollup@4.14.2)(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))(vitest@1.5.0(@types/node@20.12.7)(happy-dom@14.7.1)(terser@5.30.3))(vue-router@4.3.0(vue@3.4.21(typescript@5.4.5)))(vue@3.4.21(typescript@5.4.5))
+      '@nuxt/test-utils': 3.12.1(h3@1.11.1)(happy-dom@14.7.1)(playwright-core@1.43.1)(rollup@4.14.2)(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))(vitest@1.5.0(@types/node@20.12.7)(happy-dom@14.7.1)(terser@5.30.3))(vue-router@4.3.0(vue@3.4.21(typescript@5.4.5)))(vue@3.4.21(typescript@5.4.5))
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@jest/globals'
