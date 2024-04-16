@@ -28,7 +28,7 @@ importers:
         specifier: 0.5.5
         version: 0.5.5(@nuxt/kit@3.11.2(rollup@4.14.2))(nuxi@3.11.1)(typescript@5.4.5)
       '@nuxt/test-utils':
-        specifier: ^3.12.0
+        specifier: 3.12.0
         version: 3.12.0(h3@1.11.1)(happy-dom@14.7.1)(playwright-core@1.43.1)(rollup@4.14.2)(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))(vitest@1.5.0(@types/node@20.12.7)(happy-dom@14.7.1)(terser@5.30.3))(vue-router@4.3.0(vue@3.4.21(typescript@5.4.5)))(vue@3.4.21(typescript@5.4.5))
       changelogen:
         specifier: 0.5.5
@@ -46,7 +46,7 @@ importers:
         specifier: 3.3.2
         version: 3.3.2
       nuxt:
-        specifier: ^3.11.2
+        specifier: 3.11.2
         version: 3.11.2(@parcel/watcher@2.4.1)(@types/node@20.12.7)(@unocss/reset@0.59.2)(encoding@0.1.13)(eslint@9.0.0)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.14.2))(vue@3.4.21(typescript@5.4.5)))(ioredis@5.3.2)(optionator@0.9.3)(rollup@4.14.2)(terser@5.30.3)(typescript@5.4.5)(unocss@0.59.2(postcss@8.4.38)(rollup@4.14.2)(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3)))(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))
       playwright:
         specifier: 1.43.1
