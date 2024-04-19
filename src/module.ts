@@ -1,5 +1,5 @@
 import { defu } from 'defu'
-import { defineNuxtModule, addPlugin, addImportsDir, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, addImportsDir, createResolver, useLogger } from '@nuxt/kit'
 import { name, version } from '../package.json'
 import type { ModuleOptions } from './types'
 
@@ -19,6 +19,12 @@ export default defineNuxtModule<ModuleOptions>({
     refreshOnResize: false,
   },
   setup(options, nuxt) {
+    if (typeof options.refreshOnResize === 'boolean') {
+      const logger = useLogger('@nuxtjs/device')
+
+      logger.warn('\'refreshOnResize\' option is deprecated. It will be removed in the next major release.')
+    }
+
     if (!options.enabled) {
       return
     }
