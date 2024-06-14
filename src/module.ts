@@ -31,7 +31,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'device-module',
     configKey: 'device',
     compatibility: {
-      nuxt: '^3.0.0-rc.5 || ^2.16.0',
+      nuxt: '>=3.0.0-rc.5 || ^2.16.0',
       bridge: true
     }
   },
