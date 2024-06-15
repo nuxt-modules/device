@@ -1,37 +1,24 @@
-# @nuxtjs/device
+![Nuxt banner](./.github/assets/banner.png)
+
+# Nuxt Device
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
-[![Standard JS][standard-js-src]][standard-js-href]
+[![Nuxt][nuxt-src]][nuxt-href]
 
-This module injects flags that indicate a device type into the context and the component instance.
+Detect the type of device in your Nuxt applications.
 
 See [demo on CodeSandbox](https://codesandbox.io/s/github/nuxt-community/device-module).
 
-## Setup for Nuxt3
-
-If you use Nuxt2.x use [@nuxtjs/device 2.x](https://github.com/nuxt-community/device-module/tree/v2.1.0).
-
-Add `@nuxtjs/device` to the dev dependencies using yarn or npm to your project.
+## Installation
 
 ```bash
-yarn add --dev @nuxtjs/device
-# Using npm
-npm install -D @nuxtjs/device
+npx nuxi@latest module add device
 ```
 
-Add it to the `modules` section of your `nuxt.config`:
-
-```js
-{
-  modules: [
-   '@nuxtjs/device',
-  ]
-}
-```
-
-That's it, you can now use `$device` in your [Nuxt](https://nuxtjs.org) app ✨
+> [!NOTE]
+> You can find the Nuxt 2 version of the module on the [`2.x` branch](https://github.com/nuxt-modules/device/tree/2.x).
 
 ## Flags
 
@@ -164,26 +151,19 @@ https://support.cloudflare.com/hc/en-us/articles/229373388-Cache-Content-by-Devi
 
 [MIT License](./LICENSE)
 
-<!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/device.svg?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/device
-
-[npm-downloads-src]: https://img.shields.io/npm/v/@nuxtjs/device/latest.svg?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/device
-
-[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/device-module.svg?style=flat-square
-[circle-ci-href]: https://circleci.com/gh/nuxt-community/device-module
-
-[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/device-module.svg?style=flat-square
-[codecov-href]: https://codecov.io/gh/nuxt-community/device-module
-
-[standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
-[standard-js-href]: https://standardjs.com
-
-[license-src]: https://img.shields.io/npm/l/@nuxtjs/device.svg?style=flat-square
-[license-href]: https://npmjs.com/package/@nuxtjs/device
-
 ## Data Source
 
 This module uses [crawler-user-agents](https://github.com/monperrus/crawler-user-agents) to generate the regular expression that detect a crawler.
 
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/device/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/device
+
+[npm-downloads-src]: https://img.shields.io/npm/dm/@nuxtjs/device.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/device
+
+[license-src]: https://img.shields.io/github/license/nuxt-modules/device.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://github.com/nuxt-modules/device/blob/main/LICENSE
+
+[nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
+[nuxt-href]: https://nuxt.com
