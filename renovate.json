@@ -5,5 +5,5 @@
     ":pinDevDependencies",
     ":widenPeerDependencies"
   ],
-  "baseBranches": ["main", "2.x"]
+  "baseBranches": ["main"]
 }
