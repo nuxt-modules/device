@@ -39,7 +39,7 @@ export type Device = {
   isCrawler: boolean
 }
 
-declare module 'nuxt/schema' {
+declare module '@nuxt/schema' {
   interface PublicRuntimeConfig {
     device: ModuleOptions
   }
