@@ -1,17 +1,19 @@
 import { reactive } from 'vue'
 import generateFlags from './generateFlags'
 import { defineNuxtPlugin, useRuntimeConfig, useRequestHeaders } from '#imports'
+// https://github.com/nuxt/module-builder/issues/141
+import type {} from 'nuxt/app'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig()
+  const runtimeConfig = useRuntimeConfig()
 
-  const defaultUserAgent = config.public.device.defaultUserAgent
+  const defaultUserAgent = runtimeConfig.public?.device?.defaultUserAgent
 
   // Server Side
   if (nuxtApp.ssrContext) {
     const headers = useRequestHeaders()
 
-    const userAgent = headers['user-agent'] || defaultUserAgent
+    const userAgent = headers['user-agent'] || defaultUserAgent || ''
 
     const flags = reactive(generateFlags(userAgent, headers))
 
@@ -23,10 +25,10 @@ export default defineNuxtPlugin((nuxtApp) => {
   }
 
   // Client Side
-  const userAgent = navigator.userAgent || defaultUserAgent
+  const userAgent = navigator.userAgent || defaultUserAgent || ''
   const flags = reactive(generateFlags(userAgent))
 
-  if (config.public.device.refreshOnResize) {
+  if (runtimeConfig.public?.device?.refreshOnResize) {
     window.addEventListener('resize', () => {
       setTimeout(() => {
         const newFlags = generateFlags(navigator.userAgent || userAgent)
