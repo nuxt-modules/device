@@ -18,7 +18,7 @@ importers:
         specifier: 0.5.3
         version: 0.5.3(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       '@nuxt/kit':
-        specifier: ^3.13.0
+        specifier: 3.13.0
         version: 3.13.0(magicast@0.3.5)(rollup@4.21.1)
       '@nuxt/module-builder':
         specifier: 0.8.3
@@ -36,7 +36,7 @@ importers:
         specifier: 7.0.3
         version: 7.0.3
       defu:
-        specifier: ^6.1.4
+        specifier: 6.1.4
         version: 6.1.4
       eslint:
         specifier: 9.9.1
@@ -65,12 +65,6 @@ importers:
       '@nuxtjs/device':
         specifier: workspace:*
         version: link:..
-
-  test/fixtures/basic:
-    dependencies:
-      '@nuxtjs/device':
-        specifier: workspace:*
-        version: link:../../..
 
 packages:
 
