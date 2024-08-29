@@ -14,26 +14,32 @@ export default defineNuxtModule<ModuleOptions>({
     version,
   },
   setup(options, nuxt) {
-    if (typeof options.refreshOnResize === 'boolean') {
+    if (typeof options.enabled === 'boolean' || typeof options.refreshOnResize === 'boolean') {
       const logger = useLogger('@nuxtjs/device')
 
-      logger.warn('\'refreshOnResize\' option is deprecated. It will be removed in the next major release.')
+      if (typeof options.enabled === 'boolean') {
+        logger.warn('\'enabled\' option is deprecated. It will be removed in the next major release.')
+      }
+
+      if (typeof options.refreshOnResize === 'boolean') {
+        logger.warn('\'refreshOnResize\' option is deprecated. It will be removed in the next major release.')
+      }
     }
 
-    if (!options.enabled) {
+    if (options.enabled === false) {
       return
     }
 
     nuxt.options.runtimeConfig.public.device = defu(nuxt.options.runtimeConfig.public.device, {
-      enabled: true,
       defaultUserAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36',
+      enabled: true,
       refreshOnResize: false,
     })
 
     const { resolve } = createResolver(import.meta.url)
 
-    addPlugin(resolve('runtime/plugin'))
+    addPlugin(resolve('./runtime/plugin'))
 
-    addImportsDir(resolve('runtime/composables'))
+    addImportsDir(resolve('./runtime/composables'))
   },
 })
