@@ -13,11 +13,6 @@ export default defineNuxtModule<ModuleOptions>({
     },
     version,
   },
-  defaults: {
-    enabled: true,
-    defaultUserAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36',
-    refreshOnResize: false,
-  },
   setup(options, nuxt) {
     if (typeof options.refreshOnResize === 'boolean') {
       const logger = useLogger('@nuxtjs/device')
@@ -29,7 +24,11 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    nuxt.options.runtimeConfig.public.device = defu(nuxt.options.runtimeConfig.public.device, options)
+    nuxt.options.runtimeConfig.public.device = defu(nuxt.options.runtimeConfig.public.device, {
+      enabled: true,
+      defaultUserAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36',
+      refreshOnResize: false,
+    })
 
     const { resolve } = createResolver(import.meta.url)
 
