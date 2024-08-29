@@ -45,3 +45,15 @@ declare module '@nuxt/schema' {
     device: Required<ModuleOptions>
   }
 }
+
+declare module '#app' {
+  interface NuxtApp {
+    $device: Device
+  }
+}
+
+declare module 'vue' {
+  interface ComponentCustomProperties {
+    $device: Device
+  }
+}
