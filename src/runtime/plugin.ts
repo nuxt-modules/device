@@ -1,4 +1,4 @@
-import type { Device } from '../types'
+import type { Device } from './types'
 import generateFlags from './generateFlags'
 import { defineNuxtPlugin, reactive, useRequestHeaders, useRuntimeConfig } from '#imports'
 
