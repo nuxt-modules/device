@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/device",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Device detection module for Nuxt",
   "repository": {
     "type": "git",

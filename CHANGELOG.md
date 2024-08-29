@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.2.1
+
+[compare changes](https://github.com/nuxt-modules/device/compare/v3.2.0...v3.2.1)
+
+### 🚀 Enhancements
+
+- Deprecate `enabled` option ([7b64ac6](https://github.com/nuxt-modules/device/commit/7b64ac6))
+
+### 🩹 Fixes
+
+- Do not warn about `refreshOnResize` deprecation if not explicitly used ([11196cd](https://github.com/nuxt-modules/device/commit/11196cd))
+- Add augmentations for `$device` helper ([e758cc6](https://github.com/nuxt-modules/device/commit/e758cc6))
+
+### 💅 Refactors
+
+- Use single return in plugin ([401a366](https://github.com/nuxt-modules/device/commit/401a366))
+- Shorten `useDevice` syntax ([e528ba7](https://github.com/nuxt-modules/device/commit/e528ba7))
+
+### 🏡 Chore
+
+- Use local module in playground ([eca8ff1](https://github.com/nuxt-modules/device/commit/eca8ff1))
+
+### ❤️ Contributors
+
+- Damian Głowala <damian.glowala.rebkow@gmail.com>
+
 ## v3.2.0
 
 [compare changes](https://github.com/nuxt-modules/device/compare/v3.1.1...v3.2.0)
