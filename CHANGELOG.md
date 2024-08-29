@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.2.2
+
+[compare changes](https://github.com/nuxt-modules/device/compare/v3.2.1...v3.2.2)
+
+### 🩹 Fixes
+
+- Move runtime types to `src/runtime/` dir ([57a658a](https://github.com/nuxt-modules/device/commit/57a658a))
+
+### ❤️ Contributors
+
+- Damian Głowala <damian.glowala.rebkow@gmail.com>
+
 ## v3.2.1
 
 [compare changes](https://github.com/nuxt-modules/device/compare/v3.2.0...v3.2.1)
