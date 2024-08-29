@@ -1,11 +1,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    '@nuxtjs/device',
-  ],
-  device: {
-    // enabled: true,
-    // defaultUserAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36',
-    // refreshOnResize: false
-  },
+
+  modules: ['../src/module'],
+
+  device: {},
+
+  compatibilityDate: '2024-08-29',
 })

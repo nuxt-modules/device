@@ -60,12 +60,6 @@ importers:
         specifier: 2.0.5
         version: 2.0.5(@types/node@22.5.1)(happy-dom@15.0.0)(terser@5.31.6)
 
-  playground:
-    dependencies:
-      '@nuxtjs/device':
-        specifier: workspace:*
-        version: link:..
-
 packages:
 
   '@ampproject/remapping@2.3.0':
