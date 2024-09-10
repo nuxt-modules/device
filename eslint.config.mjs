@@ -3,8 +3,8 @@ import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
 
 export default createConfigForNuxt({
   features: {
-    tooling: true,
     stylistic: true,
+    tooling: true,
   },
   dirs: {
     src: [
@@ -13,5 +13,10 @@ export default createConfigForNuxt({
   },
 })
   .append(
-    // your custom flat config here...
+    {
+      files: ['test/**'],
+      rules: {
+        'vue/multi-word-component-names': 'off',
+      },
+    },
   )

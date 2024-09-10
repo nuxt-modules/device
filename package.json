@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/device",
-  "version": "3.1.1",
+  "version": "3.2.2",
   "description": "Device detection module for Nuxt",
   "repository": {
     "type": "git",
@@ -27,38 +27,37 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build build",
+    "build": "nuxt-module-build build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
-    "bot-regex": "node scripts/create-bots-regex.js",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
+    "prepack": "pnpm build",
+    "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release --push --publish",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.11.2",
-    "defu": "^6.1.4"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "1.1.5",
-    "@nuxt/eslint-config": "0.3.7",
-    "@nuxt/module-builder": "0.5.5",
-    "@nuxt/test-utils": "3.12.1",
+    "@nuxt/devtools": "1.4.1",
+    "@nuxt/eslint-config": "0.5.3",
+    "@nuxt/kit": "3.13.0",
+    "@nuxt/module-builder": "0.8.3",
+    "@nuxt/test-utils": "3.14.1",
     "changelogen": "0.5.5",
+    "crawler-user-agents": "1.0.143",
     "cross-env": "7.0.3",
-    "eslint": "9.0.0",
-    "happy-dom": "14.7.1",
+    "defu": "6.1.4",
+    "eslint": "9.9.1",
+    "happy-dom": "15.0.0",
     "node-fetch": "3.3.2",
-    "nuxt": "3.11.2",
-    "playwright": "1.43.1",
-    "typescript": "5.4.5",
-    "vitest": "2.0.4"
+    "nuxt": "3.13.0",
+    "playwright": "1.46.1",
+    "typescript": "5.5.4",
+    "vitest": "2.0.5"
   },
   "resolutions": {
     "@nuxtjs/device": "workspace:*"
   },
-  "packageManager": "pnpm@9.0.1"
+  "packageManager": "pnpm@9.9.0"
 }

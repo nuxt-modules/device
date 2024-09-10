@@ -2,6 +2,94 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.2.2
+
+[compare changes](https://github.com/nuxt-modules/device/compare/v3.2.1...v3.2.2)
+
+### 🩹 Fixes
+
+- Move runtime types to `src/runtime/` dir ([57a658a](https://github.com/nuxt-modules/device/commit/57a658a))
+
+### ❤️ Contributors
+
+- Damian Głowala <damian.glowala.rebkow@gmail.com>
+
+## v3.2.1
+
+[compare changes](https://github.com/nuxt-modules/device/compare/v3.2.0...v3.2.1)
+
+### 🚀 Enhancements
+
+- Deprecate `enabled` option ([7b64ac6](https://github.com/nuxt-modules/device/commit/7b64ac6))
+
+### 🩹 Fixes
+
+- Do not warn about `refreshOnResize` deprecation if not explicitly used ([11196cd](https://github.com/nuxt-modules/device/commit/11196cd))
+- Add augmentations for `$device` helper ([e758cc6](https://github.com/nuxt-modules/device/commit/e758cc6))
+
+### 💅 Refactors
+
+- Use single return in plugin ([401a366](https://github.com/nuxt-modules/device/commit/401a366))
+- Shorten `useDevice` syntax ([e528ba7](https://github.com/nuxt-modules/device/commit/e528ba7))
+
+### 🏡 Chore
+
+- Use local module in playground ([eca8ff1](https://github.com/nuxt-modules/device/commit/eca8ff1))
+
+### ❤️ Contributors
+
+- Damian Głowala <damian.glowala.rebkow@gmail.com>
+
+## v3.2.0
+
+[compare changes](https://github.com/nuxt-modules/device/compare/v3.1.1...v3.2.0)
+
+### 🚀 Enhancements
+
+- Module overhaul ([#199](https://github.com/nuxt-modules/device/pull/199))
+- Deprecate `refreshOnResize` option ([#211](https://github.com/nuxt-modules/device/pull/211))
+- Detect `Google-InspectionTool` crawler ([#219](https://github.com/nuxt-modules/device/pull/219))
+- Replace manual crawler regex generation with `crawler-user-agents` ([#224](https://github.com/nuxt-modules/device/pull/224))
+
+### 🩹 Fixes
+
+- Import Nuxt composables from `#imports` ([#174](https://github.com/nuxt-modules/device/pull/174))
+- Update to latest `@nuxt/module-builder` ([#223](https://github.com/nuxt-modules/device/pull/223))
+- Augment runtime config on `@nuxt/schema` ([a84ad64](https://github.com/nuxt-modules/device/commit/a84ad64))
+- Disable 'vue/multi-word-component-names' for `test/` dir ([502d5b1](https://github.com/nuxt-modules/device/commit/502d5b1))
+- Account for absence of module's runtime config in plugin ([a311d11](https://github.com/nuxt-modules/device/commit/a311d11))
+
+### 📖 Documentation
+
+- Use new `nuxi module add` command in installation ([#187](https://github.com/nuxt-modules/device/pull/187))
+- Update link to `2.x` branch ([2aec2e7](https://github.com/nuxt-modules/device/commit/2aec2e7))
+- Remove unused badges ([4cdf090](https://github.com/nuxt-modules/device/commit/4cdf090))
+- Revert removing badges ([eea7813](https://github.com/nuxt-modules/device/commit/eea7813))
+- Update badges style and links ([d290e56](https://github.com/nuxt-modules/device/commit/d290e56))
+- Add banner ([1130799](https://github.com/nuxt-modules/device/commit/1130799))
+
+### 🏡 Chore
+
+- Add pull request template ([2de7def](https://github.com/nuxt-modules/device/commit/2de7def))
+- Lint pull request template ([0faf42f](https://github.com/nuxt-modules/device/commit/0faf42f))
+- Update renovate config ([855e082](https://github.com/nuxt-modules/device/commit/855e082))
+- Test bundler module resolution ([#181](https://github.com/nuxt-modules/device/pull/181))
+- Indicate compatibility with new v4 major ([#216](https://github.com/nuxt-modules/device/pull/216))
+- Exclude `2.x` branch from renovate ([487f042](https://github.com/nuxt-modules/device/commit/487f042))
+- Remove commented out module config from test fixture ([6d860a4](https://github.com/nuxt-modules/device/commit/6d860a4))
+
+### 🤖 CI
+
+- Add label PR workflow ([50a9f4f](https://github.com/nuxt-modules/device/commit/50a9f4f))
+- Add reproduire ([#188](https://github.com/nuxt-modules/device/pull/188))
+
+### ❤️ Contributors
+
+- Damian Glowala ([@DamianGlowala](http://github.com/DamianGlowala))
+- Damian Głowala ([@DamianGlowala](http://github.com/DamianGlowala))
+- Daniel Roe ([@danielroe](http://github.com/danielroe))
+- Dmitriy Kuts <exileed@yandex.ru>
+
 ### [3.1.1](https://github.com/nuxt-modules/device/compare/v3.1.0...v3.1.1) (2023-09-16)
 
  * #157 chore: export runtime

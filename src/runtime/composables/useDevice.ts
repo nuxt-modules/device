@@ -1,6 +1,4 @@
-import type { Device } from '../../types'
+import type { Device } from '../types'
 import { useNuxtApp } from '#imports'
 
-export const useDevice = (): Device => {
-  return useNuxtApp().$device
-}
+export const useDevice = (): Device => useNuxtApp().$device

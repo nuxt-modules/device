@@ -1,3 +1,2 @@
 packages:
-  - "playground"
-  - "test/fixtures/*"
+  - playground
