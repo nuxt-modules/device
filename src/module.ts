@@ -1,5 +1,6 @@
 import { defu } from 'defu'
-import { defineNuxtModule, addPlugin, addImportsDir, createResolver, useLogger } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, addImportsDir, createResolver, useLogger, addTemplate } from '@nuxt/kit'
+import { createJiti } from 'jiti'
 import { name, version } from '../package.json'
 import type { ModuleOptions } from './types'
 
@@ -41,5 +42,16 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve('./runtime/plugin'))
 
     addImportsDir(resolve('./runtime/composables'))
+
+    addTemplate({
+      filename: 'nuxtjs-device.mjs',
+      getContents: async () => {
+        const jiti = createJiti(import.meta.url)
+
+        const crawlers = await jiti.import('crawler-user-agents') as { pattern: string }[]
+
+        return `export const REGEX_CRAWLER = new RegExp(/${crawlers.map(crawler => crawler.pattern).join('|')}/)`
+      },
+    })
   },
 })
