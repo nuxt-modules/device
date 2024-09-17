@@ -1,9 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>nuxt/renovate-config-nuxt",
-    ":pinDevDependencies",
-    ":widenPeerDependencies"
+    "github>nuxt/renovate-config-nuxt"
   ],
   "baseBranches": ["main"]
 }
