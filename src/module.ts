@@ -1,5 +1,6 @@
 import { defu } from 'defu'
-import { defineNuxtModule, addPlugin, addImportsDir, createResolver, useLogger } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, addImportsDir, createResolver, useLogger, addTemplate } from '@nuxt/kit'
+import crawlers from 'crawler-user-agents' assert { type: 'json' }
 import { name, version } from '../package.json'
 import type { ModuleOptions } from './types'
 
@@ -41,5 +42,12 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve('./runtime/plugin'))
 
     addImportsDir(resolve('./runtime/composables'))
+
+    addTemplate({
+      filename: 'nuxtjs-device.mjs',
+      getContents: () => `export const REGEX_CRAWLER = new RegExp(/${
+        crawlers.map(crawler => crawler.pattern).join('|')
+      }/)`,
+    })
   },
 })
