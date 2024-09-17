@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.2.3
+
+[compare changes](https://github.com/nuxt-modules/device/compare/v3.2.2...v3.2.3)
+
+### 🩹 Fixes
+
+- Generate crawlers regex at build time ([#230](https://github.com/nuxt-modules/device/pull/230))
+
+### 🏡 Chore
+
+- Update README and module options JSDoc ([5483663](https://github.com/nuxt-modules/device/commit/5483663))
+- Unpin dependencies and update renovate config ([a12c6a4](https://github.com/nuxt-modules/device/commit/a12c6a4))
+
+### ❤️ Contributors
+
+- Damian Głowala ([@DamianGlowala](https://github.com/DamianGlowala))
+
 ## v3.2.2
 
 [compare changes](https://github.com/nuxt-modules/device/compare/v3.2.1...v3.2.2)
@@ -12,7 +29,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ❤️ Contributors
 
-- Damian Głowala <damian.glowala.rebkow@gmail.com>
+- Damian Głowala ([@DamianGlowala](https://github.com/DamianGlowala))
 
 ## v3.2.1
 
@@ -38,7 +55,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ❤️ Contributors
 
-- Damian Głowala <damian.glowala.rebkow@gmail.com>
+- Damian Głowala ([@DamianGlowala](https://github.com/DamianGlowala))
 
 ## v3.2.0
 
@@ -85,9 +102,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ❤️ Contributors
 
-- Damian Glowala ([@DamianGlowala](http://github.com/DamianGlowala))
-- Damian Głowala ([@DamianGlowala](http://github.com/DamianGlowala))
-- Daniel Roe ([@danielroe](http://github.com/danielroe))
+- Damian Głowala ([@DamianGlowala](https://github.com/DamianGlowala))
+- Daniel Roe ([@danielroe](https://github.com/danielroe))
 - Dmitriy Kuts <exileed@yandex.ru>
 
 ### [3.1.1](https://github.com/nuxt-modules/device/compare/v3.1.0...v3.1.1) (2023-09-16)
