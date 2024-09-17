@@ -45,9 +45,9 @@ export default defineNuxtModule<ModuleOptions>({
 
     addTemplate({
       filename: 'nuxtjs-device.mjs',
-      getContents: () => {
-        return `export const REGEX_CRAWLER = new RegExp(/${crawlers.map(crawler => crawler.pattern).join('|')}/)`
-      },
+      getContents: () => `export const REGEX_CRAWLER = new RegExp(/${
+        crawlers.map(crawler => crawler.pattern).join('|')
+      }/)`,
     })
   },
 })
