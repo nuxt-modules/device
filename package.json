@@ -50,6 +50,7 @@
     "defu": "6.1.4",
     "eslint": "9.10.0",
     "happy-dom": "15.7.4",
+    "jiti": "2.0.0-beta.3",
     "node-fetch": "3.3.2",
     "nuxt": "3.13.2",
     "playwright": "1.47.1",
