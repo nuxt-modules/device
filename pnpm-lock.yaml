@@ -10,6 +10,10 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      defu:
+        specifier: ^6.1.4
+        version: 6.1.4
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
@@ -32,9 +36,6 @@ importers:
       crawler-user-agents:
         specifier: ^1.0.149
         version: 1.0.149
-      defu:
-        specifier: ^6.1.4
-        version: 6.1.4
       eslint:
         specifier: ^9.10.0
         version: 9.10.0(jiti@1.21.6)

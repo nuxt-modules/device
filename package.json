@@ -38,6 +38,9 @@
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
+  "dependencies": {
+    "defu": "^6.1.4"
+  },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/eslint-config": "^0.5.7",
@@ -46,7 +49,6 @@
     "@nuxt/test-utils": "^3.14.2",
     "changelogen": "^0.5.5",
     "crawler-user-agents": "^1.0.149",
-    "defu": "^6.1.4",
     "eslint": "^9.10.0",
     "happy-dom": "^15.7.4",
     "nuxt": "^3.13.2",
