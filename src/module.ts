@@ -1,6 +1,6 @@
 import { defu } from 'defu'
 import { defineNuxtModule, addPlugin, addImportsDir, createResolver, useLogger, addTemplate } from '@nuxt/kit'
-import crawlers from 'crawler-user-agents' assert { type: 'json' }
+import crawlers from 'crawler-user-agents' with { type: 'json' }
 import { name, version } from '../package.json'
 import type { ModuleOptions } from './types'
 
