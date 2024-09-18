@@ -1,39 +1,39 @@
 name: ci
 
 on:
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:
-            - main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-    test-fixtures:
-        runs-on: ${{ matrix.os }}
-        timeout-minutes: 10
+  test-fixtures:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node-version: [20]
 
-        strategy:
-            matrix:
-                os: [ubuntu-latest, windows-latest]
-                node: [18]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
 
-        steps:
-            - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
-            - run: corepack enable
-            - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
-              with:
-                node-version: 20
-                cache: "pnpm"
-            
-            - name: Install dependencies
-              run: pnpm install
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - run: corepack enable
+      - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+      
+      - name: Install dependencies
+        run: pnpm install
 
-            - name: Install Playwright
-              run: pnpm playwright-core install chromium
+      - name: Install Playwright
+        run: pnpm playwright-core install chromium
 
-            - name: Build (stub)
-              run: pnpm dev:prepare
-            
-            - name: Test (fixtures)
-              run: pnpm test
+      - name: Build (stub)
+        run: pnpm dev:prepare
+      
+      - name: Test (fixtures)
+        run: pnpm test
