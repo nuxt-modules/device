@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.2.4
+
+[compare changes](https://github.com/nuxt-modules/device/compare/v3.2.3...v3.2.4)
+
+### 🩹 Fixes
+
+- Inline `crawler-user-agents` dependency ([#232](https://github.com/nuxt-modules/device/pull/232))
+
+### 🤖 CI
+
+- Run CI workflow on Node version from matrix ([c504a6f](https://github.com/nuxt-modules/device/commit/c504a6f))
+
+### ❤️ Contributors
+
+- Damian Głowala ([@DamianGlowala](http://github.com/DamianGlowala))
+
 ## v3.2.3
 
 [compare changes](https://github.com/nuxt-modules/device/compare/v3.2.2...v3.2.3)
