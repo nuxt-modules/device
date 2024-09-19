@@ -47,7 +47,7 @@
     "@nuxt/kit": "^3.13.2",
     "@nuxt/module-builder": "^0.8.4",
     "@nuxt/test-utils": "^3.14.2",
-    "changelogen": "^0.5.5",
+    "changelogen": "^0.5.7",
     "crawler-user-agents": "^1.0.149",
     "eslint": "^9.10.0",
     "happy-dom": "^15.7.4",
