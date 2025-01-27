@@ -40,6 +40,7 @@ function isMacOS(userAgent: string): boolean {
 function isLinux(userAgent: string): boolean {
   return /Linux/i.test(userAgent) && !isAndroid(userAgent)
 }
+
 // Following regular expressions are originated from bowser(https://github.com/lancedikson/bowser).
 // Copyright 2015, Dustin Diaz (the "Original Author")
 // https://github.com/lancedikson/bowser/blob/master/LICENSE
