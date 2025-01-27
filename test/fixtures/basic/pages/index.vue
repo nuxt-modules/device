@@ -9,6 +9,7 @@
     <p>isTablet: {{ device.isTablet ? '✅':'❌' }}</p>
     <p>isWindows: {{ device.isWindows ? '✅':'❌' }}</p>
     <p>isMacOS: {{ device.isMacOS ? '✅':'❌' }}</p>
+    <p>isLinux: {{ device.isLinux ? '✅':'❌' }}</p>
     <p>isApple: {{ device.isApple ? '✅':'❌' }}</p>
     <p>isAndroid: {{ device.isAndroid ? '✅':'❌' }}</p>
     <p>isSafari: {{ device.isSafari ? '✅':'❌' }}</p>

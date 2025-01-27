@@ -37,6 +37,9 @@ function isMacOS(userAgent: string): boolean {
   return /Mac OS X/.test(userAgent)
 }
 
+function isLinux(userAgent: string): boolean {
+  return /Linux/i.test(userAgent) && !isAndroid(userAgent)
+}
 // Following regular expressions are originated from bowser(https://github.com/lancedikson/bowser).
 // Copyright 2015, Dustin Diaz (the "Original Author")
 // https://github.com/lancedikson/bowser/blob/master/LICENSE
@@ -116,6 +119,7 @@ export default function generateFlags(userAgent: string, headers: Record<string,
 
   const windows = isWindows(userAgent)
   const macOS = isMacOS(userAgent)
+  const linux = isLinux(userAgent)
   const browserName = getBrowserName(userAgent)
   const isSafari = browserName === 'Safari'
   const isFirefox = browserName === 'Firefox'
@@ -133,6 +137,7 @@ export default function generateFlags(userAgent: string, headers: Record<string,
     isIos: ios,
     isAndroid: android,
     isWindows: windows,
+    isLinux: linux,
     isMacOS: macOS,
     isApple: macOS || ios,
     isDesktopOrTablet: !mobile,

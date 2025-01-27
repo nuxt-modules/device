@@ -16,6 +16,7 @@ function parseHtml(html: string) {
     isIos: findTrueOrFalse(html, 'isIos: '),
     isWindows: findTrueOrFalse(html, 'isWindows: '),
     isMacOS: findTrueOrFalse(html, 'isMacOS: '),
+    isLinux: findTrueOrFalse(html, 'isLinux: '),
     isApple: findTrueOrFalse(html, 'isApple: '),
     isAndroid: findTrueOrFalse(html, 'isAndroid: '),
     isFirefox: findTrueOrFalse(html, 'isFirefox: '),
@@ -49,6 +50,7 @@ describe('ssr', async () => {
     expect(html).toContain('isIos')
     expect(html).toContain('isWindows')
     expect(html).toContain('isMacOS')
+    expect(html).toContain('isLinux')
     expect(html).toContain('isApple')
     expect(html).toContain('isAndroid')
     expect(html).toContain('isFirefox')
@@ -69,9 +71,9 @@ describe('ssr', async () => {
         },
       })
 
-      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isChrome } = parseHtml(html)
+      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isChrome } = parseHtml(html)
 
-      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isChrome }).toEqual({ isMobile: true, isMobileOrTablet: true, isAndroid: true, isIos: false, isMacOS: false, isWindows: false, isChrome: true })
+      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isChrome }).toEqual({ isMobile: true, isMobileOrTablet: true, isAndroid: true, isIos: false, isMacOS: false, isLinux: false, isWindows: false, isChrome: true })
     })
 
     it('Apple iPhone X', async () => {
@@ -83,9 +85,9 @@ describe('ssr', async () => {
         },
       })
 
-      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari } = parseHtml(html)
+      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isSafari } = parseHtml(html)
 
-      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari }).toEqual({ isMobile: true, isMobileOrTablet: true, isAndroid: false, isIos: true, isMacOS: true, isWindows: false, isSafari: true })
+      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isSafari }).toEqual({ isMobile: true, isMobileOrTablet: true, isAndroid: false, isIos: true, isMacOS: true, isLinux: false, isWindows: false, isSafari: true })
     })
 
     it('Samsung Galaxy Tab S3', async () => {
@@ -96,9 +98,9 @@ describe('ssr', async () => {
           'User-Agent': userAgent,
         },
       })
-      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isChrome } = parseHtml(html)
+      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isChrome } = parseHtml(html)
 
-      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isChrome }).toEqual({ isMobile: false, isMobileOrTablet: true, isAndroid: true, isIos: false, isMacOS: false, isWindows: false, isChrome: true })
+      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isChrome }).toEqual({ isMobile: false, isMobileOrTablet: true, isAndroid: true, isIos: false, isMacOS: false, isLinux: false, isWindows: false, isChrome: true })
     })
 
     it('Windows 10-based PC using Edge browser', async () => {
@@ -109,9 +111,22 @@ describe('ssr', async () => {
           'User-Agent': userAgent,
         },
       })
-      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isEdge } = parseHtml(html)
+      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isEdge } = parseHtml(html)
 
-      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isEdge }).toEqual({ isMobile: false, isMobileOrTablet: false, isAndroid: false, isIos: false, isMacOS: false, isWindows: true, isEdge: true })
+      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isEdge }).toEqual({ isMobile: false, isMobileOrTablet: false, isAndroid: false, isIos: false, isMacOS: false, isLinux: false, isWindows: true, isEdge: true })
+    })
+
+    it('Linux PC using Chrome browser', async () => {
+      const userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'
+
+      const html = await $fetch('/', {
+        headers: {
+          'User-Agent': userAgent,
+        },
+      })
+      const { isChrome, isFirefox, isEdge, isSafari, isSamsung, isMacOS, isLinux, isWindows } = parseHtml(html)
+
+      expect({ isChrome, isFirefox, isEdge, isSafari, isSamsung, isMacOS, isLinux, isWindows }).toEqual({ isChrome: true, isFirefox: false, isEdge: false, isSafari: false, isSamsung: false, isMacOS: false, isLinux: true, isWindows: false })
     })
 
     it('Mac OS X-based computer using a Safari browser', async () => {
@@ -122,9 +137,9 @@ describe('ssr', async () => {
           'User-Agent': userAgent,
         },
       })
-      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari } = parseHtml(html)
+      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isSafari } = parseHtml(html)
 
-      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari }).toEqual({ isMobile: false, isMobileOrTablet: false, isAndroid: false, isIos: false, isMacOS: true, isWindows: false, isSafari: true })
+      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isSafari }).toEqual({ isMobile: false, isMobileOrTablet: false, isAndroid: false, isIos: false, isMacOS: true, isLinux: false, isWindows: false, isSafari: true })
     })
   })
 
@@ -215,9 +230,9 @@ describe('ssr', async () => {
           'User-Agent': userAgent,
         },
       })
-      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari } = parseHtml(html)
+      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isSafari } = parseHtml(html)
 
-      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari }).toEqual({ isMobile: true, isMobileOrTablet: true, isAndroid: false, isIos: true, isMacOS: true, isWindows: false, isSafari: true })
+      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isSafari }).toEqual({ isMobile: true, isMobileOrTablet: true, isAndroid: false, isIos: true, isMacOS: true, isLinux: false, isWindows: false, isSafari: true })
     })
     it('Facebook', async () => {
       const userAgent
@@ -228,9 +243,9 @@ describe('ssr', async () => {
           'User-Agent': userAgent,
         },
       })
-      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari } = parseHtml(html)
+      const { isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isSafari } = parseHtml(html)
 
-      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isWindows, isSafari }).toEqual({ isMobile: true, isMobileOrTablet: true, isAndroid: false, isIos: true, isMacOS: true, isWindows: false, isSafari: true })
+      expect({ isMobile, isMobileOrTablet, isAndroid, isIos, isMacOS, isLinux, isWindows, isSafari }).toEqual({ isMobile: true, isMobileOrTablet: true, isAndroid: false, isIos: true, isMacOS: true, isLinux: false, isWindows: false, isSafari: true })
     })
   })
 

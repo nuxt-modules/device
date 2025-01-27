@@ -30,6 +30,7 @@ You can use the following flags to detect the device type:
 - `$device.isMobileOrTablet`
 - `$device.isDesktopOrTablet`
 - `$device.isIos`
+- `$device.isLinux`
 - `$device.isWindows`
 - `$device.isMacOS`
 - `$device.isApple`

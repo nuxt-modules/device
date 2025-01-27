@@ -7,6 +7,7 @@ export type Device = {
   isMobileOrTablet: boolean
   isDesktopOrTablet: boolean
   isTablet: boolean
+  isLinux: boolean
   isWindows: boolean
   isMacOS: boolean
   isApple: boolean
