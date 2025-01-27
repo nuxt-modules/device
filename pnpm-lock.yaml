@@ -29,7 +29,7 @@ importers:
         version: 0.8.4(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.21.1)(webpack-sources@3.2.3))(nuxi@3.13.2)(typescript@5.7.3)(webpack-sources@3.2.3)
       '@nuxt/test-utils':
         specifier: ^3.15.4
-        version: 3.15.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.50.0)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vitest@3.0.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(yaml@2.5.1)
+        version: 3.15.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.50.0)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vitest@3.0.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(yaml@2.5.1)
       changelogen:
         specifier: ^0.5.7
         version: 0.5.7(magicast@0.3.5)
@@ -40,8 +40,8 @@ importers:
         specifier: ^9.19.0
         version: 9.19.0(jiti@2.4.2)
       happy-dom:
-        specifier: ^15.11.7
-        version: 15.11.7
+        specifier: ^16.7.3
+        version: 16.7.3
       nuxt:
         specifier: ^3.13.2
         version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@22.5.1)(eslint@9.19.0(jiti@2.4.2))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vite@6.0.11(@types/node@22.5.1)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(webpack-sources@3.2.3)
@@ -53,7 +53,7 @@ importers:
         version: 5.7.3
       vitest:
         specifier: ^3.0.4
-        version: 3.0.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1)
+        version: 3.0.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1)
 
 packages:
 
@@ -2939,8 +2939,8 @@ packages:
   h3@1.14.0:
     resolution: {integrity: sha512-ao22eiONdgelqcnknw0iD645qW0s9NnrJHr5OBz4WOMdBdycfSas1EQf1wXRsm+PcB2Yoj43pjBPwqIpJQTeWg==}
 
-  happy-dom@15.11.7:
-    resolution: {integrity: sha512-KyrFvnl+J9US63TEzwoiJOQzZBJY7KgBushJA8X61DMbNsH+2ONkDuLDnCnwUiPTF42tLoEmrPyoqbenVA5zrg==}
+  happy-dom@16.7.3:
+    resolution: {integrity: sha512-76uiE9jCpC849cOyYZ8YBROpPcstW/hwCKoQYd3aiZaxHeR9zdjpup4z7qYEWbt+lY8Rb3efW2gmrckyoBftKg==}
     engines: {node: '>=18.0.0'}
 
   has-flag@3.0.0:
@@ -6070,7 +6070,7 @@ snapshots:
       - supports-color
       - webpack-sources
 
-  '@nuxt/test-utils@3.15.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.50.0)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vitest@3.0.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(yaml@2.5.1)':
+  '@nuxt/test-utils@3.15.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.50.0)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vitest@3.0.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(yaml@2.5.1)':
     dependencies:
       '@nuxt/kit': 3.15.3(magicast@0.3.5)(rollup@4.21.1)
       '@nuxt/schema': 3.15.3
@@ -6096,12 +6096,12 @@ snapshots:
       unenv: 1.10.0
       unplugin: 2.1.2
       vite: 6.0.11(@types/node@22.5.1)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1)
-      vitest-environment-nuxt: 1.0.1(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.50.0)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vitest@3.0.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(yaml@2.5.1)
+      vitest-environment-nuxt: 1.0.1(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.50.0)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vitest@3.0.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(yaml@2.5.1)
       vue: 3.5.13(typescript@5.7.3)
     optionalDependencies:
-      happy-dom: 15.11.7
+      happy-dom: 16.7.3
       playwright-core: 1.50.0
-      vitest: 3.0.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1)
+      vitest: 3.0.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -8159,9 +8159,8 @@ snapshots:
       uncrypto: 0.1.3
       unenv: 1.10.0
 
-  happy-dom@15.11.7:
+  happy-dom@16.7.3:
     dependencies:
-      entities: 4.5.0
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
 
@@ -10155,9 +10154,9 @@ snapshots:
       terser: 5.31.6
       yaml: 2.5.1
 
-  vitest-environment-nuxt@1.0.1(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.50.0)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vitest@3.0.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(yaml@2.5.1):
+  vitest-environment-nuxt@1.0.1(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.50.0)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vitest@3.0.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(yaml@2.5.1):
     dependencies:
-      '@nuxt/test-utils': 3.15.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.50.0)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vitest@3.0.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(yaml@2.5.1)
+      '@nuxt/test-utils': 3.15.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.50.0)(rollup@4.21.1)(terser@5.31.6)(typescript@5.7.3)(vitest@3.0.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))(yaml@2.5.1)
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@jest/globals'
@@ -10185,7 +10184,7 @@ snapshots:
       - vitest
       - yaml
 
-  vitest@3.0.4(@types/node@22.5.1)(happy-dom@15.11.7)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1):
+  vitest@3.0.4(@types/node@22.5.1)(happy-dom@16.7.3)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1):
     dependencies:
       '@vitest/expect': 3.0.4
       '@vitest/mocker': 3.0.4(vite@6.0.11(@types/node@22.5.1)(jiti@2.4.2)(terser@5.31.6)(yaml@2.5.1))
@@ -10209,7 +10208,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.5.1
-      happy-dom: 15.11.7
+      happy-dom: 16.7.3
     transitivePeerDependencies:
       - jiti
       - less
