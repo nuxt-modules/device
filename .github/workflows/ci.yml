@@ -25,6 +25,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
+        
+      - name: Use latest Corepack
+        run: |
+          npm install -g corepack@latest
+          corepack enable
       
       - name: Install dependencies
         run: pnpm install
