@@ -44,14 +44,14 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/eslint-config": "^1.4.1",
-    "@nuxt/kit": "^3.16.1",
+    "@nuxt/kit": "^3.17.5",
     "@nuxt/module-builder": "^1.0.1",
     "@nuxt/test-utils": "^3.19.1",
     "changelogen": "^0.6.1",
     "crawler-user-agents": "^1.15.0",
     "eslint": "^9.28.0",
     "happy-dom": "^17.6.3",
-    "nuxt": "^3.16.1",
+    "nuxt": "^3.17.5",
     "playwright": "^1.53.0",
     "typescript": "^5.8.3",
     "vitest": "^3.2.3"
