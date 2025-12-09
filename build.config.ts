@@ -2,6 +2,6 @@ import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   rollup: {
-    inlineDependencies: true,
+    inlineDependencies: ['crawler-user-agents'],
   },
 })
