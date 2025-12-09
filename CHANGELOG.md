@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v4.0.0
+
+[compare changes](https://github.com/nuxt-modules/device/compare/v3.2.4...v4.0.0)
+
+### 🚀 Enhancements
+
+- Add `isLinux` flag ([#243](https://github.com/nuxt-modules/device/pull/243))
+- ⚠️  Drop support for Nuxt 2 and remove `bridge` compatibility option ([c91cebe](https://github.com/nuxt-modules/device/commit/c91cebe))
+- Move to ESM-only ([78f00e3](https://github.com/nuxt-modules/device/commit/78f00e3))
+- Remove deprecated options and update README ([58b6e19](https://github.com/nuxt-modules/device/commit/58b6e19))
+
+### 🏡 Chore
+
+- Lint ([837d4a8](https://github.com/nuxt-modules/device/commit/837d4a8))
+- Update playground tsconfig to Nuxt 4 ([1c9c59e](https://github.com/nuxt-modules/device/commit/1c9c59e))
+- Lint ([df53a93](https://github.com/nuxt-modules/device/commit/df53a93))
+- Update pnpm workspace ([24aa73e](https://github.com/nuxt-modules/device/commit/24aa73e))
+- Update inlineDependencies to specify 'crawler-user-agents' explicitly ([5199650](https://github.com/nuxt-modules/device/commit/5199650))
+- Update package.json ([b20e980](https://github.com/nuxt-modules/device/commit/b20e980))
+
+### 🤖 CI
+
+- Use latest corepack ([c79a102](https://github.com/nuxt-modules/device/commit/c79a102))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Drop support for Nuxt 2 and remove `bridge` compatibility option ([c91cebe](https://github.com/nuxt-modules/device/commit/c91cebe))
+
+### ❤️ Contributors
+
+- Damian Glowala ([@DamianGlowala](https://github.com/DamianGlowala))
+- Alan Schio ([@schirrel](https://github.com/schirrel))
+
 ## v3.2.4
 
 [compare changes](https://github.com/nuxt-modules/device/compare/v3.2.3...v3.2.4)
