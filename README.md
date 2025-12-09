@@ -14,11 +14,8 @@ See [demo on CodeSandbox](https://codesandbox.io/s/github/nuxt-community/device-
 ## Installation
 
 ```bash
-npx nuxi@latest module add device
+npx nuxt module add device
 ```
-
-> [!NOTE]
-> You can find the Nuxt 2 version of the module on the [`2.x` branch](https://github.com/nuxt-modules/device/tree/2.x).
 
 ## Flags
 
@@ -84,17 +81,6 @@ definePageMeta({
 </script>
 ```
 
-<!-- ### Adding a Custom Flag
-
-You can add other flags to `$device` by adding a [Nuxt plugin](https://nuxtjs.org/docs/2.x/directory-structure/plugins):
-
-```js
-// plugins/custom-flag.js
-export default function ({ $device }) {
-  $device.isCustom = $device.userAgent.includes('Custom-Agent') ? true : false
-}
-``` -->
-
 ### Options
 
 #### `defaultUserAgent`
@@ -102,24 +88,6 @@ export default function ({ $device }) {
 Sets the default value for the `user-agent` header (useful when running `npm run generate`).
 
 Default: `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36`
-
-#### `enabled`
-
-Enables the module conditionally.
-
-Default: `true`
-
-> [!WARNING]
-> This option is deprecated. It will be removed in the next major release.
-
-#### `refreshOnResize`
-
-Refreshes flags on window resize.
-
-Default: `false`
-
-> [!WARNING]
-> This option is deprecated. It will be removed in the next major release.
 
 ## Amazon CloudFront Support
 
