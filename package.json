@@ -50,7 +50,7 @@
     "changelogen": "^0.6.2",
     "crawler-user-agents": "^1.22.0",
     "eslint": "^9.39.1",
-    "happy-dom": "^18.0.1",
+    "happy-dom": "^20.0.11",
     "nuxt": "^4.2.1",
     "playwright": "^1.57.0",
     "typescript": "^5.9.3",
