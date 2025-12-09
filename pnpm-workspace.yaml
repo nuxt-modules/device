@@ -1,2 +1,8 @@
 packages:
   - playground
+
+ignoredBuiltDependencies:
+  - esbuild
+  - unrs-resolver
+
+verifyDepsBeforeRun: install
