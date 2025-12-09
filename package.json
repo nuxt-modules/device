@@ -4,10 +4,9 @@
     "description": "Device detection module for Nuxt",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/nuxt-modules/device"
+        "url": "git+https://github.com/nuxt-modules/device.git"
     },
     "license": "MIT",
-    "author": "Shinji Yamada <dotneet@gmail.com>",
     "type": "module",
     "exports": {
         ".": {
