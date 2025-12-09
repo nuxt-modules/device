@@ -60,7 +60,7 @@
         "nuxt": "^4.2.1",
         "playwright": "^1.57.0",
         "typescript": "^5.9.3",
-        "vitest": "^3.2.4"
+        "vitest": "^4.0.15"
     },
     "resolutions": {
         "@nuxtjs/device": "workspace:*"
