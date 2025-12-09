@@ -20,19 +20,6 @@ export default defineNuxtPlugin(() => {
     const userAgent = navigator.userAgent || defaultUserAgent
 
     flags = reactive(generateFlags(userAgent))
-
-    if (runtimeConfig.public.device.refreshOnResize) {
-      window.addEventListener('resize', () => {
-        setTimeout(() => {
-          const newFlags = generateFlags(navigator.userAgent || userAgent)
-
-          Object.entries(newFlags).forEach(([key, value]) => {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (flags as any)[key] = value
-          })
-        }, 50)
-      })
-    }
   }
 
   return {
