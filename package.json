@@ -1,63 +1,70 @@
 {
-  "name": "@nuxtjs/device",
-  "version": "3.2.4",
-  "description": "Device detection module for Nuxt",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nuxt-modules/device"
-  },
-  "license": "MIT",
-  "author": "Shinji Yamada <dotneet@gmail.com>",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+    "name": "@nuxtjs/device",
+    "version": "3.2.4",
+    "description": "Device detection module for Nuxt",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nuxt-modules/device"
     },
-    "./runtime/*": {
-      "types": "./dist/runtime/*.d.ts",
-      "import": "./dist/runtime/*.mjs",
-      "require": "./dist/runtime/*.cjs"
-    }
-  },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "nuxt-module-build build",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "lint": "eslint . --cache",
-    "lint:fix": "eslint . --cache --fix",
-    "prepack": "pnpm build",
-    "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release && pnpm publish && git push --follow-tags",
-    "test": "vitest run",
-    "test:watch": "vitest watch"
-  },
-  "dependencies": {
-    "defu": "^6.1.4"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxt/eslint-config": "^1.11.0",
-    "@nuxt/kit": "^4.2.1",
-    "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/test-utils": "^3.21.0",
-    "changelogen": "^0.6.2",
-    "crawler-user-agents": "^1.22.0",
-    "eslint": "^9.39.1",
-    "happy-dom": "^20.0.11",
-    "nuxt": "^4.2.1",
-    "playwright": "^1.57.0",
-    "typescript": "^5.9.3",
-    "vitest": "^3.2.4"
-  },
-  "resolutions": {
-    "@nuxtjs/device": "workspace:*"
-  },
-  "packageManager": "pnpm@10.25.0"
+    "license": "MIT",
+    "author": "Shinji Yamada <dotneet@gmail.com>",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/types.d.mts",
+            "import": "./dist/module.mjs"
+        },
+        "./runtime/*": {
+            "types": "./dist/runtime/*.d.mts",
+            "import": "./dist/runtime/*.mjs"
+        }
+    },
+    "main": "./dist/module.mjs",
+    "typesVersions": {
+        "*": {
+            ".": [
+                "./dist/types.d.mts"
+            ],
+            "runtime/*": [
+                "./dist/runtime/*.d.mts"
+            ]
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "nuxt-module-build build",
+        "dev": "nuxi dev playground",
+        "dev:build": "nuxi build playground",
+        "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+        "lint": "eslint . --cache",
+        "lint:fix": "eslint . --cache --fix",
+        "prepack": "pnpm build",
+        "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release && pnpm publish && git push --follow-tags",
+        "test": "vitest run",
+        "test:watch": "vitest watch"
+    },
+    "dependencies": {
+        "defu": "^6.1.4"
+    },
+    "devDependencies": {
+        "@nuxt/devtools": "latest",
+        "@nuxt/eslint-config": "^1.11.0",
+        "@nuxt/kit": "^4.2.1",
+        "@nuxt/module-builder": "^1.0.2",
+        "@nuxt/test-utils": "^3.21.0",
+        "changelogen": "^0.6.2",
+        "crawler-user-agents": "^1.22.0",
+        "eslint": "^9.39.1",
+        "happy-dom": "^20.0.11",
+        "nuxt": "^4.2.1",
+        "playwright": "^1.57.0",
+        "typescript": "^5.9.3",
+        "vitest": "^3.2.4"
+    },
+    "resolutions": {
+        "@nuxtjs/device": "workspace:*"
+    },
+    "packageManager": "pnpm@10.25.0"
 }
