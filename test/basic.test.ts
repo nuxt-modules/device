@@ -223,7 +223,7 @@ describe('ssr', async () => {
   describe('detects an-app browser', () => {
     it('Instagram', async () => {
       const userAgent
-          = 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15A372 Instagram'
+        = 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15A372 Instagram'
 
       const html = await $fetch('/', {
         headers: {
@@ -236,7 +236,7 @@ describe('ssr', async () => {
     })
     it('Facebook', async () => {
       const userAgent
-          = 'Mozilla/5.0 ((iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit (KHTML, like Gecko) Mobile [FBAN/FBForIPhone;FBAV/4.1;FBBV/4100.0;FBDV/iPhone3,1;FBMD/iPhone;FBSN/iPhone OS;FBSV/5.1.1;FBSS/2; tablet;FBLC/en_US]'
+        = 'Mozilla/5.0 ((iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit (KHTML, like Gecko) Mobile [FBAN/FBForIPhone;FBAV/4.1;FBBV/4100.0;FBDV/iPhone3,1;FBMD/iPhone;FBSN/iPhone OS;FBSV/5.1.1;FBSS/2; tablet;FBLC/en_US]'
 
       const html = await $fetch('/', {
         headers: {
