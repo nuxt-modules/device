@@ -49,22 +49,22 @@
     },
     "devDependencies": {
         "@nuxt/devtools": "latest",
-        "@nuxt/eslint-config": "^1.11.0",
+        "@nuxt/eslint-config": "^1.15.2",
         "@nuxt/kit": "^4.3.1",
         "@nuxt/module-builder": "^1.0.2",
         "@nuxt/test-utils": "^4.0.0",
         "@vue/test-utils": "^2.4.6",
         "changelogen": "^0.6.2",
-        "crawler-user-agents": "^1.22.0",
-        "eslint": "^10.0.2",
-        "happy-dom": "^20.0.11",
+        "crawler-user-agents": "^1.37.0",
+        "eslint": "^10.1.0",
+        "happy-dom": "^20.8.9",
         "nuxt": "^4.3.1",
-        "playwright": "^1.57.0",
+        "playwright": "^1.58.2",
         "typescript": "^6.0.2",
-        "vitest": "^4.0.2"
+        "vitest": "^4.1.2"
     },
     "resolutions": {
         "@nuxtjs/device": "workspace:*"
     },
-    "packageManager": "pnpm@10.25.0"
+    "packageManager": "pnpm@10.33.0"
 }
