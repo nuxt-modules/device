@@ -1,0 +1,14 @@
+diff --git a/dist/shared/test-utils.E_cAGA8l.mjs b/dist/shared/test-utils.E_cAGA8l.mjs
+index 2d790885c8d43efb490a41145f3694295e6e9363..b70c51a4ec767d3e0b93a9eb85a86e28d9e293a9 100644
+--- a/dist/shared/test-utils.E_cAGA8l.mjs
++++ b/dist/shared/test-utils.E_cAGA8l.mjs
+@@ -115,7 +115,8 @@ async function buildFixture() {
+ }
+ 
+ async function setupBun(hooks) {
+-  const bunTest = await import('bun:test');
++  const specifier = 'bun:test';
++  const bunTest = await import(specifier);
+   hooks.ctx.mockFn = bunTest.mock;
+   bunTest.beforeAll(hooks.beforeAll, hooks.ctx.options.setupTimeout);
+   bunTest.beforeEach(hooks.beforeEach);

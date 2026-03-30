@@ -5,4 +5,7 @@ ignoredBuiltDependencies:
   - esbuild
   - unrs-resolver
 
+patchedDependencies:
+  '@nuxt/test-utils': patches/@nuxt__test-utils.patch
+
 verifyDepsBeforeRun: install
