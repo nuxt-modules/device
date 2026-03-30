@@ -53,6 +53,7 @@
         "@nuxt/kit": "^4.3.1",
         "@nuxt/module-builder": "^1.0.2",
         "@nuxt/test-utils": "^4.0.0",
+        "@vue/test-utils": "^2.4.6",
         "changelogen": "^0.6.2",
         "crawler-user-agents": "^1.22.0",
         "eslint": "^10.0.2",
@@ -60,7 +61,7 @@
         "nuxt": "^4.3.1",
         "playwright": "^1.57.0",
         "typescript": "^6.0.2",
-        "vitest": "^3.2.4"
+        "vitest": "^4.0.2"
     },
     "resolutions": {
         "@nuxtjs/device": "workspace:*"
