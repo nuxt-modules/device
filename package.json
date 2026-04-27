@@ -45,26 +45,26 @@
         "test:watch": "vitest watch"
     },
     "dependencies": {
-        "defu": "^6.1.4"
+        "defu": "^6.1.7"
     },
     "devDependencies": {
         "@nuxt/devtools": "latest",
         "@nuxt/eslint-config": "^1.15.2",
         "@nuxt/kit": "^4.4.2",
         "@nuxt/module-builder": "^1.0.2",
-        "@nuxt/test-utils": "^4.0.0",
-        "@vue/test-utils": "^2.4.6",
+        "@nuxt/test-utils": "^4.0.3",
+        "@vue/test-utils": "^2.4.9",
         "changelogen": "^0.6.2",
-        "crawler-user-agents": "^1.37.0",
-        "eslint": "^10.1.0",
-        "happy-dom": "^20.8.9",
+        "crawler-user-agents": "^1.44.0",
+        "eslint": "^10.2.1",
+        "happy-dom": "^20.9.0",
         "nuxt": "^4.4.2",
-        "playwright": "^1.58.2",
-        "typescript": "^6.0.2",
-        "vitest": "^4.1.2"
+        "playwright": "^1.59.1",
+        "typescript": "^6.0.3",
+        "vitest": "^4.1.5"
     },
     "resolutions": {
         "@nuxtjs/device": "workspace:*"
     },
-    "packageManager": "pnpm@10.33.0"
+    "packageManager": "pnpm@10.33.2"
 }
