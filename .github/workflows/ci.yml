@@ -35,7 +35,7 @@ jobs:
         run: pnpm install
 
       - name: Install Playwright
-        run: pnpm playwright-core install chromium
+        run: pnpm exec playwright-core install chromium
 
       - name: Build (stub)
         run: pnpm dev:prepare
