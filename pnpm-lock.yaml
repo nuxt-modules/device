@@ -4,13 +4,8 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@nuxtjs/device': workspace:*
-
 patchedDependencies:
-  '@nuxt/test-utils':
-    hash: 09b117a58754270ecae49ece5165a9171a32b3b3f672936031e0f646ef081ddc
-    path: patches/@nuxt__test-utils.patch
+  '@nuxt/test-utils': fe55f9c4b68460e2c0be8afdbdc227d65f98081e5314f5f367480ee3788887b2
 
 importers:
 
