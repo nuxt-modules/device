@@ -4,6 +4,4 @@ allowBuilds:
   '@parcel/watcher': true
   esbuild: true
   unrs-resolver: false
-patchedDependencies:
-  '@nuxt/test-utils': patches/@nuxt__test-utils.patch
 verifyDepsBeforeRun: install
