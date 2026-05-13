@@ -59,7 +59,7 @@
         "eslint": "^10.3.0",
         "happy-dom": "^20.9.0",
         "nuxt": "^4.4.5",
-        "playwright": "^1.60.0",
+        "playwright-core": "^1.60.0",
         "typescript": "^6.0.3",
         "vitest": "^4.1.6"
     },
