@@ -66,5 +66,5 @@
     "resolutions": {
         "@nuxtjs/device": "workspace:*"
     },
-    "packageManager": "pnpm@10.33.4"
+    "packageManager": "pnpm@11.1.1"
 }
