@@ -50,7 +50,7 @@
     "devDependencies": {
         "@nuxt/devtools": "latest",
         "@nuxt/eslint-config": "^1.15.2",
-        "@nuxt/kit": "^4.4.5",
+        "@nuxt/kit": "^4.4.6",
         "@nuxt/module-builder": "^1.0.2",
         "@nuxt/test-utils": "^4.0.3",
         "@vue/test-utils": "^2.4.10",
@@ -58,7 +58,7 @@
         "crawler-user-agents": "^1.45.0",
         "eslint": "^10.3.0",
         "happy-dom": "^20.9.0",
-        "nuxt": "^4.4.5",
+        "nuxt": "^4.4.6",
         "playwright-core": "^1.60.0",
         "typescript": "^6.0.3",
         "vitest": "^4.1.6"
