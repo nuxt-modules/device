@@ -56,7 +56,7 @@
         "@vue/test-utils": "^2.4.10",
         "changelogen": "^0.6.2",
         "crawler-user-agents": "^1.45.0",
-        "eslint": "^10.3.0",
+        "eslint": "^10.4.0",
         "happy-dom": "^20.9.0",
         "nuxt": "^4.4.5",
         "playwright-core": "^1.60.0",
@@ -66,5 +66,5 @@
     "resolutions": {
         "@nuxtjs/device": "workspace:*"
     },
-    "packageManager": "pnpm@11.1.1"
+    "packageManager": "pnpm@11.1.3"
 }
