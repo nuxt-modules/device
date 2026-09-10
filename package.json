@@ -60,7 +60,7 @@
         "happy-dom": "^20.10.6",
         "nuxt": "^4.4.8",
         "playwright-core": "^1.61.1",
-        "typescript": "^6.0.3",
+        "typescript": "^7.0.2",
         "vitest": "^4.1.10"
     },
     "resolutions": {
