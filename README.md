@@ -85,7 +85,7 @@ definePageMeta({
 
 ## Static Generation
 
-Static generation (e.g. `nuxt generate`) is not supported. Prerendered pages are rendered once at build time without a user agent, so they are always rendered as a desktop.
+Static generation (e.g. `nuxt generate`) is not supported. Prerendered pages are rendered once at build time without a user agent, so they are always treated as a desktop. Similarly, responses cached on the server (e.g. with `swr` or `isr` route rules) keep the flags of the request they were cached from.
 
 To detect the device on each request, deploy with `nuxt build` instead. For a client-side only app, set `ssr: false` to detect the device in the browser.
 
