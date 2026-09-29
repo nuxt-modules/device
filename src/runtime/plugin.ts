@@ -1,8 +1,9 @@
+import type { Plugin } from 'nuxt/app'
 import type { Device } from './types'
 import generateFlags from './generateFlags'
 import { defineNuxtPlugin, reactive, useRequestHeaders, useRuntimeConfig } from '#imports'
 
-export default defineNuxtPlugin(() => {
+const plugin: Plugin<{ device: Device }> = defineNuxtPlugin(() => {
   const runtimeConfig = useRuntimeConfig()
 
   const defaultUserAgent = runtimeConfig.public.device.defaultUserAgent
@@ -28,3 +29,5 @@ export default defineNuxtPlugin(() => {
     },
   }
 })
+
+export default plugin
