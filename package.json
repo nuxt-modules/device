@@ -44,9 +44,6 @@
         "test": "vitest run",
         "test:watch": "vitest watch"
     },
-    "dependencies": {
-        "defu": "^6.1.7"
-    },
     "devDependencies": {
         "@nuxt/devtools": "latest",
         "@nuxt/eslint-config": "^1.17.0",

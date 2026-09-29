@@ -61,6 +61,16 @@ describe('ssr', async () => {
     expect(html).toContain('isCrawler')
   })
 
+  it('treats an empty user agent as a desktop', async () => {
+    const html = await $fetch('/', {
+      headers: {
+        'User-Agent': '',
+      },
+    })
+
+    expect(parseHtml(html)).toEqual({ isDesktop: true, isMobile: false, isTablet: false, isMobileOrTablet: false, isDesktopOrTablet: true, isIos: false, isWindows: false, isMacOS: false, isLinux: false, isApple: false, isAndroid: false, isFirefox: false, isEdge: false, isChrome: false, isSafari: false, isSamsung: false, isCrawler: false })
+  })
+
   describe('detects device', () => {
     it('Samsung Galaxy S9', async () => {
       const userAgent = 'Mozilla/5.0 (Linux; Android 8.0.0; SM-G960F Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36'
