@@ -9,7 +9,7 @@
 
 Detect the type of device in your Nuxt applications.
 
-See [demo on CodeSandbox](https://codesandbox.io/s/github/nuxt-community/device-module).
+- [👾 &nbsp;Playground](https://stackblitz.com/github/nuxt-modules/device?file=playground%2Fapp%2Fapp.vue)
 
 ## Installation
 
