@@ -165,10 +165,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      defu:
-        specifier: ^6.1.7
-        version: 6.1.7
     devDependencies:
       '@nuxt/devtools':
         specifier: latest

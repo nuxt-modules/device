@@ -5,5 +5,4 @@ export default defineNuxtConfig({
     compatibilityVersion: 5,
   },
   compatibilityDate: '2026-09-29',
-  device: {},
 })

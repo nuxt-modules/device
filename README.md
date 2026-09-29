@@ -41,6 +41,8 @@ You can use the following flags to detect the device type:
 
 The user agent is also injected and accessible with `$device.userAgent`.
 
+If a request has no `User-Agent` header, `$device.userAgent` is an empty string and the device is treated as a desktop with an unknown OS and browser.
+
 The crawler detection is powered by the [crawler-user-agents](https://github.com/monperrus/crawler-user-agents) package.
 
 ## Usage
@@ -81,13 +83,11 @@ definePageMeta({
 </script>
 ```
 
-### Options
+## Static Generation
 
-#### `defaultUserAgent`
+Static generation (e.g. `nuxt generate`) is not supported. Prerendered pages are rendered once at build time without a user agent, so they are always rendered as a desktop.
 
-Sets the default value for the `user-agent` header (useful when running `npm run generate`).
-
-Default: `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36`
+To detect the device on each request, deploy with `nuxt build` instead. For a client-side only app, set `ssr: false` to detect the device in the browser.
 
 ## Amazon CloudFront Support
 
