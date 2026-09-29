@@ -1,9 +1,9 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
-
   devtools: { enabled: true },
-
-  compatibilityDate: '2024-08-29',
-
+  future: {
+    compatibilityVersion: 5,
+  },
+  compatibilityDate: '2026-09-29',
   device: {},
 })

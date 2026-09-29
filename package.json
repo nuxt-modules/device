@@ -66,5 +66,16 @@
     "resolutions": {
         "@nuxtjs/device": "workspace:*"
     },
-    "packageManager": "pnpm@12.6.0"
+    "devEngines": {
+        "runtime": {
+            "name": "node",
+            "version": ">=24",
+            "onFail": "download"
+        },
+        "packageManager": {
+            "name": "pnpm",
+            "version": "12.6.0",
+            "onFail": "download"
+        }
+    }
 }
