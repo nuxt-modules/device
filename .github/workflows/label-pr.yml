@@ -29,7 +29,7 @@ jobs:
             }
 
             // Select label based on the name of the base branch
-            const baseBranchLabelName = '3.x'
+            const baseBranchLabelName = '4.x'
 
             if (!pullRequest.labelsNames.includes(baseBranchLabelName)) {
               labelsToAdd.push(baseBranchLabelName)
