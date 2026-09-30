@@ -3,5 +3,5 @@
   "extends": [
     "github>nuxt/renovate-config-nuxt"
   ],
-  "baseBranches": ["main"]
+  "minimumReleaseAge": "1 day"
 }
