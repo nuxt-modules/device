@@ -4,11 +4,11 @@ import pkg from '../package.json' with { type: 'json' }
 
 export default defineNuxtModule({
   meta: {
-    name,
+    name: pkg.name,
     compatibility: {
       nuxt: '>=4.0.0',
     },
-    version,
+    version: pkg.version,
   },
   setup() {
     const { resolve } = createResolver(import.meta.url)
