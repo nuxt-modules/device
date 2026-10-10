@@ -1,6 +1,6 @@
 import { defineNuxtModule, addPlugin, addImportsDir, createResolver, addTemplate } from '@nuxt/kit'
-import crawlers from 'crawler-user-agents' with { type: 'json' }
-import { name, version } from '../package.json'
+import crawlers from 'crawler-user-agents'
+import pkg from '../package.json' with { type: 'json' }
 
 export default defineNuxtModule({
   meta: {
