@@ -259,7 +259,73 @@ describe('ssr', async () => {
     })
   })
 
-  it('detects cloudfront headers - mobile', async () => {
+  // CloudFront device headers must win over the User-Agent, which can be either
+  // the viewer's browser (when it is forwarded by the cache policy) or
+  // `Amazon CloudFront` (when CloudFront replaces it).
+  const DESKTOP_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+  const IPHONE_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1'
+
+  it('detects cloudfront headers - mobile (browser user agent)', async () => {
+    const html = await $fetch('/', {
+      headers: {
+        'User-Agent': DESKTOP_UA,
+        'Cloudfront-Is-Mobile-Viewer': 'true',
+      },
+    })
+    const { isMobile, isMobileOrTablet } = parseHtml(html)
+
+    expect({ isMobile, isMobileOrTablet }).toEqual({ isMobile: true, isMobileOrTablet: true })
+  })
+
+  it('detects cloudfront headers - tablet (browser user agent)', async () => {
+    const html = await $fetch('/', {
+      headers: {
+        'User-Agent': DESKTOP_UA,
+        'Cloudfront-Is-Tablet-Viewer': 'true',
+      },
+    })
+    const { isMobile, isMobileOrTablet, isTablet } = parseHtml(html)
+
+    expect({ isMobile, isMobileOrTablet, isTablet }).toEqual({ isMobile: false, isMobileOrTablet: true, isTablet: true })
+  })
+
+  it('detects cloudfront headers - desktop (browser user agent)', async () => {
+    const html = await $fetch('/', {
+      headers: {
+        'User-Agent': IPHONE_UA,
+        'Cloudfront-Is-Desktop-Viewer': 'true',
+      },
+    })
+    const { isDesktop, isMobile } = parseHtml(html)
+
+    expect({ isDesktop, isMobile }).toEqual({ isDesktop: true, isMobile: false })
+  })
+
+  it('detects cloudfront headers - ios (browser user agent)', async () => {
+    const html = await $fetch('/', {
+      headers: {
+        'User-Agent': DESKTOP_UA,
+        'Cloudfront-Is-Ios-Viewer': 'true',
+      },
+    })
+    const { isIos } = parseHtml(html)
+
+    expect(isIos).toEqual(true)
+  })
+
+  it('detects cloudfront headers - android (browser user agent)', async () => {
+    const html = await $fetch('/', {
+      headers: {
+        'User-Agent': DESKTOP_UA,
+        'Cloudfront-Is-Android-Viewer': 'true',
+      },
+    })
+    const { isAndroid } = parseHtml(html)
+
+    expect(isAndroid).toEqual(true)
+  })
+
+  it('detects cloudfront headers - replaced user agent', async () => {
     const html = await $fetch('/', {
       headers: {
         'User-Agent': 'Amazon CloudFront',
@@ -271,52 +337,15 @@ describe('ssr', async () => {
     expect({ isMobile, isMobileOrTablet }).toEqual({ isMobile: true, isMobileOrTablet: true })
   })
 
-  it('detects cloudfront headers - tablet', async () => {
+  it('does not detect cloudfront when no headers are present', async () => {
     const html = await $fetch('/', {
       headers: {
-        'User-Agent': 'Amazon CloudFront',
-        'Cloudfront-Is-Tablet-Viewer': 'true',
+        'User-Agent': DESKTOP_UA,
       },
     })
-    const { isMobile, isMobileOrTablet } = parseHtml(html)
+    const { isDesktop, isMobile } = parseHtml(html)
 
-    expect({ isMobile, isMobileOrTablet }).toEqual({ isMobile: false, isMobileOrTablet: true })
-  })
-
-  it('detects cloudfront headers - desktop', async () => {
-    const html = await $fetch('/', {
-      headers: {
-        'User-Agent': 'Amazon CloudFront',
-        'Cloudfront-Is-Desktop-Viewer': 'true',
-      },
-    })
-    const { isDesktop } = parseHtml(html)
-
-    expect(isDesktop).toEqual(true)
-  })
-
-  it('detects cloudfront headers - ios', async () => {
-    const html = await $fetch('/', {
-      headers: {
-        'User-Agent': 'Amazon CloudFront',
-        'Cloudfront-Is-Ios-Viewer': 'true',
-      },
-    })
-    const { isIos } = parseHtml(html)
-
-    expect(isIos).toEqual(true)
-  })
-
-  it('detects cloudfront headers - android', async () => {
-    const html = await $fetch('/', {
-      headers: {
-        'User-Agent': 'Amazon CloudFront',
-        'Cloudfront-Is-Android-Viewer': 'true',
-      },
-    })
-    const { isAndroid } = parseHtml(html)
-
-    expect(isAndroid).toEqual(true)
+    expect({ isDesktop, isMobile }).toEqual({ isDesktop: true, isMobile: false })
   })
 
   it('detects cloudflare headers - mobile', async () => {
