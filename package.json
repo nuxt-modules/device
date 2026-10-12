@@ -45,10 +45,12 @@
         "test": "vitest run",
         "test:watch": "vitest watch"
     },
+    "dependencies": {
+        "@nuxt/kit": "^4.6.1"
+    },
     "devDependencies": {
         "@nuxt/devtools": "latest",
         "@nuxt/eslint-config": "^1.17.0",
-        "@nuxt/kit": "^4.6.1",
         "@nuxt/module-builder": "^1.0.3",
         "@nuxt/test-utils": "^4.3.2",
         "@vue/test-utils": "^2.5.1",
