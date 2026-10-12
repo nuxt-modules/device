@@ -43,6 +43,7 @@
         "prepack": "pnpm build",
         "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release && pnpm publish && git push --follow-tags",
         "test": "vitest run",
+        "test:types": "vue-tsc --noEmit && vue-tsc -b playground --noEmit",
         "test:watch": "vitest watch"
     },
     "dependencies": {
@@ -62,7 +63,8 @@
         "playwright-core": "^1.63.0",
         "typescript": "^6.0.3",
         "unbuild": "^3.6.1",
-        "vitest": "^5.0.2"
+        "vitest": "^5.0.2",
+        "vue-tsc": "^3.3.13"
     },
     "devEngines": {
         "runtime": {
