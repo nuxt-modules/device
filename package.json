@@ -36,7 +36,8 @@
         "build": "nuxt-module-build build",
         "dev": "nuxi dev playground",
         "dev:build": "nuxi build playground",
-        "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+        "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground && pnpm -C playground-v5 exec nuxt prepare",
+        "dev:v5": "pnpm -C playground-v5 exec nuxt dev",
         "lint": "eslint . --cache",
         "lint:fix": "eslint . --cache --fix",
         "prepack": "pnpm build",
@@ -44,10 +45,12 @@
         "test": "vitest run",
         "test:watch": "vitest watch"
     },
+    "dependencies": {
+        "@nuxt/kit": "^4.6.1"
+    },
     "devDependencies": {
         "@nuxt/devtools": "latest",
         "@nuxt/eslint-config": "^1.17.0",
-        "@nuxt/kit": "^4.6.1",
         "@nuxt/module-builder": "^1.0.3",
         "@nuxt/test-utils": "^4.3.2",
         "@vue/test-utils": "^2.5.1",
@@ -60,9 +63,6 @@
         "typescript": "^6.0.3",
         "unbuild": "^3.6.1",
         "vitest": "^5.0.2"
-    },
-    "resolutions": {
-        "@nuxtjs/device": "workspace:*"
     },
     "devEngines": {
         "runtime": {
