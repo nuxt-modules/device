@@ -4,8 +4,8 @@ packages:
 overrides:
   '@nuxtjs/device': workspace:*
 allowBuilds:
-  '@parcel/watcher': true
-  esbuild: true
+  '@parcel/watcher': false
+  esbuild: false
   unrs-resolver: false
 minimumReleaseAgeExclude:
   - '@nuxt/*'
