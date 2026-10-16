@@ -188,9 +188,6 @@ importers:
       '@vue/test-utils':
         specifier: ^2.5.1
         version: 2.5.1(@vue/compiler-dom@3.5.43)(@vue/server-renderer@3.5.43)(vue@3.5.43(typescript@6.0.3))
-      changelogen:
-        specifier: ^0.6.2
-        version: 0.6.2(magicast@0.5.5)
       crawler-user-agents:
         specifier: ^1.62.0
         version: 1.62.0
