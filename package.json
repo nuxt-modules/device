@@ -33,7 +33,7 @@
         "dist"
     ],
     "scripts": {
-        "build": "nuxt-module-build build",
+        "build": "nuxt-module-build prepare && nuxt-module-build build",
         "dev": "nuxi dev playground",
         "dev:build": "nuxi build playground",
         "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground && pnpm -C playground-v5 exec nuxt prepare",
@@ -41,7 +41,6 @@
         "lint": "eslint . --cache",
         "lint:fix": "eslint . --cache --fix",
         "prepack": "pnpm build",
-        "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release && pnpm publish && git push --follow-tags",
         "test": "vitest run",
         "test:types": "vue-tsc --noEmit && vue-tsc -b playground --noEmit",
         "test:watch": "vitest watch"
@@ -55,7 +54,6 @@
         "@nuxt/module-builder": "^1.0.3",
         "@nuxt/test-utils": "^4.3.3",
         "@vue/test-utils": "^2.5.1",
-        "changelogen": "^0.6.2",
         "crawler-user-agents": "^1.62.0",
         "eslint": "^10.12.0",
         "happy-dom": "^20.14.6",
