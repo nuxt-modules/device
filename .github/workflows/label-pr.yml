@@ -10,7 +10,7 @@ on:
 jobs:
   add-pr-labels:
     name: Add PR labels
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     permissions:
       pull-requests: write
     if: github.repository == 'nuxt-modules/device'

@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "nuxt-device-playground",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate"
+  },
+  "devDependencies": {
+    "@nuxtjs/device": "latest",
+    "nuxt": "^4.6.1"
+  }
+}

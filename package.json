@@ -33,46 +33,46 @@
         "dist"
     ],
     "scripts": {
-        "build": "nuxt-module-build build",
+        "build": "nuxt-module-build prepare && nuxt-module-build build",
         "dev": "nuxi dev playground",
         "dev:build": "nuxi build playground",
-        "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+        "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground && pnpm -C playground-v5 exec nuxt prepare",
+        "dev:v5": "pnpm -C playground-v5 exec nuxt dev",
         "lint": "eslint . --cache",
         "lint:fix": "eslint . --cache --fix",
         "prepack": "pnpm build",
-        "release": "pnpm lint && pnpm test && pnpm prepack && changelogen --release && pnpm publish && git push --follow-tags",
         "test": "vitest run",
+        "test:types": "vue-tsc --noEmit && vue-tsc -b playground --noEmit",
         "test:watch": "vitest watch"
+    },
+    "dependencies": {
+        "@nuxt/kit": "^4.6.1"
     },
     "devDependencies": {
         "@nuxt/devtools": "latest",
         "@nuxt/eslint-config": "^1.17.0",
-        "@nuxt/kit": "^4.5.2",
         "@nuxt/module-builder": "^1.0.3",
-        "@nuxt/test-utils": "^4.3.2",
+        "@nuxt/test-utils": "^4.3.3",
         "@vue/test-utils": "^2.5.1",
-        "changelogen": "^0.6.2",
-        "crawler-user-agents": "^1.60.0",
-        "eslint": "^10.11.0",
-        "happy-dom": "^20.14.5",
-        "nuxt": "^4.5.2",
-        "playwright-core": "^1.63.0",
+        "crawler-user-agents": "^1.62.0",
+        "eslint": "^10.12.0",
+        "happy-dom": "^20.14.6",
+        "nuxt": "^4.6.1",
+        "playwright-core": "^1.64.0",
         "typescript": "^6.0.3",
         "unbuild": "^3.6.1",
-        "vitest": "^5.0.2"
-    },
-    "resolutions": {
-        "@nuxtjs/device": "workspace:*"
+        "vitest": "^5.0.3",
+        "vue-tsc": "^3.3.13"
     },
     "devEngines": {
         "runtime": {
             "name": "node",
-            "version": ">=24",
+            "version": ">=24.21.0",
             "onFail": "download"
         },
         "packageManager": {
             "name": "pnpm",
-            "version": "12.6.0",
+            "version": "12.11.2",
             "onFail": "download"
         }
     }

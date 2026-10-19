@@ -1,7 +1,13 @@
 packages:
   - playground
+  - playground-v5
+overrides:
+  '@nuxtjs/device': workspace:*
 allowBuilds:
-  '@parcel/watcher': true
-  esbuild: true
+  '@parcel/watcher': false
+  esbuild: false
   unrs-resolver: false
+minimumReleaseAgeExclude:
+  - '@nuxt/*'
+  - nuxt-nightly
 verifyDepsBeforeRun: install
