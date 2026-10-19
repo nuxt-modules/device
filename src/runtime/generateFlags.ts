@@ -62,13 +62,27 @@ function getBrowserName(userAgent: string): string {
   return ''
 }
 
+// CloudFront adds these headers when device detection is enabled, regardless of
+// whether the viewer's `User-Agent` is forwarded or replaced with `Amazon CloudFront`.
+const CLOUDFRONT_DEVICE_HEADERS = [
+  'cloudfront-is-mobile-viewer',
+  'cloudfront-is-tablet-viewer',
+  'cloudfront-is-desktop-viewer',
+  'cloudfront-is-ios-viewer',
+  'cloudfront-is-android-viewer',
+]
+
+function isCloudFrontRequest(headers: Record<string, string>): boolean {
+  return CLOUDFRONT_DEVICE_HEADERS.some(header => headers[header] !== undefined)
+}
+
 export default function generateFlags(userAgent: string, headers: Record<string, string> = {}): Device {
   let mobile = false
   let mobileOrTablet = false
   let ios = false
   let android = false
 
-  if (userAgent === 'Amazon CloudFront') {
+  if (isCloudFrontRequest(headers)) {
     if (headers['cloudfront-is-mobile-viewer'] === 'true') {
       mobile = true
       mobileOrTablet = true
