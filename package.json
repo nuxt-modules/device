@@ -46,7 +46,7 @@
         "test:watch": "vitest watch"
     },
     "dependencies": {
-        "@nuxt/kit": "^4.6.1"
+        "@nuxt/kit": "^4.6.3"
     },
     "devDependencies": {
         "@nuxt/devtools": "latest",
@@ -57,7 +57,7 @@
         "crawler-user-agents": "^1.62.0",
         "eslint": "^10.12.0",
         "happy-dom": "^20.14.6",
-        "nuxt": "^4.6.1",
+        "nuxt": "^4.6.3",
         "playwright-core": "^1.64.0",
         "typescript": "^6.0.3",
         "unbuild": "^3.6.1",

@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "@nuxtjs/device": "latest",
-    "nuxt": "^4.6.1"
+    "nuxt": "^4.6.3"
   }
 }
