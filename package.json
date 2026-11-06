@@ -56,7 +56,7 @@
         "@vue/test-utils": "^2.5.1",
         "crawler-user-agents": "^1.62.0",
         "eslint": "^10.12.0",
-        "happy-dom": "^20.14.6",
+        "happy-dom": "^21.0.4",
         "nuxt": "^4.6.1",
         "playwright-core": "^1.64.0",
         "typescript": "^6.0.3",
