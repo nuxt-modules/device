@@ -37,8 +37,9 @@ function isMacOS(userAgent: string): boolean {
   return /Mac OS X/.test(userAgent)
 }
 
-function isLinux(userAgent: string): boolean {
-  return /Linux/i.test(userAgent) && !isAndroid(userAgent)
+// `android` is passed in, as it may come from the CloudFront header instead of the user agent.
+function isLinux(userAgent: string, android: boolean): boolean {
+  return /Linux/i.test(userAgent) && !android
 }
 
 // Following regular expressions are originated from bowser(https://github.com/lancedikson/bowser).
@@ -62,37 +63,36 @@ function getBrowserName(userAgent: string): string {
   return ''
 }
 
+type CloudFrontViewer = 'mobile' | 'tablet' | 'desktop' | 'ios' | 'android'
+
+// CloudFront only sends the `CloudFront-Is-*-Viewer` headers that are included in the
+// cache or origin request policy, each set to `true` or `false`, regardless of whether
+// the viewer's `User-Agent` is forwarded or replaced with `Amazon CloudFront`.
+// A missing header tells us nothing, so the user agent is used instead.
+function getCloudFrontHeader(headers: Record<string, string>, viewer: CloudFrontViewer): boolean | undefined {
+  const value = headers[`cloudfront-is-${viewer}-viewer`]
+
+  return value === undefined ? undefined : value === 'true'
+}
+
 export default function generateFlags(userAgent: string, headers: Record<string, string> = {}): Device {
-  let mobile = false
-  let mobileOrTablet = false
-  let ios = false
-  let android = false
+  let mobile = isMobile(userAgent)
+  let mobileOrTablet = isMobileOrTablet(userAgent)
 
-  if (userAgent === 'Amazon CloudFront') {
-    if (headers['cloudfront-is-mobile-viewer'] === 'true') {
-      mobile = true
-      mobileOrTablet = true
-    }
-
-    if (headers['cloudfront-is-tablet-viewer'] === 'true') {
-      mobile = false
-      mobileOrTablet = true
-    }
-
-    if (headers['cloudfront-is-desktop-viewer'] === 'true') {
-      mobile = false
-      mobileOrTablet = false
-    }
-
-    if (headers['cloudfront-is-ios-viewer'] === 'true') {
-      ios = true
-    }
-
-    if (headers['cloudfront-is-android-viewer'] === 'true') {
-      android = true
-    }
+  // Some tablets are reported as both mobile and tablet, so tablet takes precedence over mobile.
+  if (getCloudFrontHeader(headers, 'desktop')) {
+    mobile = false
+    mobileOrTablet = false
   }
-  else if (headers && headers['cf-device-type']) { // Cloudflare
+  else if (getCloudFrontHeader(headers, 'tablet')) {
+    mobile = false
+    mobileOrTablet = true
+  }
+  else if (getCloudFrontHeader(headers, 'mobile')) {
+    mobile = true
+    mobileOrTablet = true
+  }
+  else if (headers['cf-device-type']) { // Cloudflare
     switch (headers['cf-device-type']) {
       case 'mobile':
         mobile = true
@@ -111,16 +111,12 @@ export default function generateFlags(userAgent: string, headers: Record<string,
         break
     }
   }
-  else {
-    mobile = isMobile(userAgent)
-    mobileOrTablet = isMobileOrTablet(userAgent)
-    ios = isIos(userAgent)
-    android = isAndroid(userAgent)
-  }
 
+  const ios = getCloudFrontHeader(headers, 'ios') ?? isIos(userAgent)
+  const android = getCloudFrontHeader(headers, 'android') ?? isAndroid(userAgent)
   const windows = isWindows(userAgent)
   const macOS = isMacOS(userAgent)
-  const linux = isLinux(userAgent)
+  const linux = isLinux(userAgent, android)
   const browserName = getBrowserName(userAgent)
   const isSafari = browserName === 'Safari'
   const isFirefox = browserName === 'Firefox'
