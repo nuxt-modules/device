@@ -391,6 +391,19 @@ export function describeDevice(name: string, rootDir: string) {
       expect(isIos).toEqual(false)
     })
 
+    it('does not detect linux when the cloudfront android header is true', async () => {
+      const html = await $fetch('/', {
+        headers: {
+          // Android Chrome with "Request desktop site" enabled
+          'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Cloudfront-Is-Android-Viewer': 'true',
+        },
+      })
+      const { isAndroid, isLinux } = parseHtml(html)
+
+      expect({ isAndroid, isLinux }).toEqual({ isAndroid: true, isLinux: false })
+    })
+
     it('detects cloudfront headers - replaced user agent', async () => {
       const html = await $fetch('/', {
         headers: {

@@ -37,8 +37,9 @@ function isMacOS(userAgent: string): boolean {
   return /Mac OS X/.test(userAgent)
 }
 
-function isLinux(userAgent: string): boolean {
-  return /Linux/i.test(userAgent) && !isAndroid(userAgent)
+// `android` is passed in, as it may come from the CloudFront header instead of the user agent.
+function isLinux(userAgent: string, android: boolean): boolean {
+  return /Linux/i.test(userAgent) && !android
 }
 
 // Following regular expressions are originated from bowser(https://github.com/lancedikson/bowser).
@@ -115,7 +116,7 @@ export default function generateFlags(userAgent: string, headers: Record<string,
   const android = getCloudFrontHeader(headers, 'android') ?? isAndroid(userAgent)
   const windows = isWindows(userAgent)
   const macOS = isMacOS(userAgent)
-  const linux = isLinux(userAgent)
+  const linux = isLinux(userAgent, android)
   const browserName = getBrowserName(userAgent)
   const isSafari = browserName === 'Safari'
   const isFirefox = browserName === 'Firefox'
