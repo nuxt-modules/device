@@ -51,7 +51,7 @@
     "devDependencies": {
         "@nuxt/devtools": "latest",
         "@nuxt/eslint-config": "^1.17.0",
-        "@nuxt/module-builder": "^1.0.3",
+        "@nuxt/module-builder": "https://pkg.pr.new/nuxt/module-builder/@nuxt/module-builder@811",
         "@nuxt/test-utils": "^4.3.3",
         "@vue/test-utils": "^2.5.1",
         "crawler-user-agents": "^1.62.0",
@@ -59,8 +59,8 @@
         "happy-dom": "^20.14.6",
         "nuxt": "^4.6.1",
         "playwright-core": "^1.64.0",
+        "tsdown": "^0.23.7",
         "typescript": "^6.0.3",
-        "unbuild": "^3.6.1",
         "vitest": "^5.0.3",
         "vue-tsc": "^3.3.13"
     },
