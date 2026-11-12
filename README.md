@@ -99,7 +99,12 @@ When [CloudFront device detection](https://docs.aws.amazon.com/AmazonCloudFront/
 - `CloudFront-Is-Mobile-Viewer`
 - `CloudFront-Is-Tablet-Viewer`
 
-These headers take precedence over user agent parsing. This works both when CloudFront forwards the viewer's browser user agent and when it replaces it with `Amazon CloudFront`.
+Each header that is present takes precedence over user agent parsing for the flags it covers, and anything a header doesn't cover is detected from the user agent:
+
+- The device type comes from the first of `CloudFront-Is-Desktop-Viewer`, `CloudFront-Is-Tablet-Viewer` and `CloudFront-Is-Mobile-Viewer` that is `true`. If none of them is `true`, the user agent is used.
+- `isIos` and `isAndroid` come from `CloudFront-Is-IOS-Viewer` and `CloudFront-Is-Android-Viewer` when they are present, and from the user agent otherwise.
+
+This works both when CloudFront forwards the viewer's browser user agent and when it replaces it with `Amazon CloudFront`. If CloudFront caches your pages, include every device header you rely on in the cache policy, so each cached page matches the device type it was rendered for.
 
 Read more about determining the viewer's device type in the [Amazon CloudFront docs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-cloudfront-headers.html#cloudfront-headers-device-type).
 
