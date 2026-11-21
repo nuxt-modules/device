@@ -10,4 +10,5 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - '@nuxt/*'
   - nuxt-nightly
+  - vue-sfc-transformer@0.3.5
 verifyDepsBeforeRun: install
