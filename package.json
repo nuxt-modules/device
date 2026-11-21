@@ -10,39 +10,42 @@
     "type": "module",
     "exports": {
         ".": {
-            "types": "./dist/types.d.mts",
-            "import": "./dist/module.mjs"
+            "types": "./.nuxt/module-builder/types.d.mts",
+            "import": "./src/module.ts"
         },
         "./runtime/*": {
-            "types": "./dist/runtime/*.d.mts",
-            "import": "./dist/runtime/*.mjs"
+            "types": "./src/runtime/*.ts",
+            "import": "./src/runtime/*.ts"
         }
     },
-    "main": "./dist/module.mjs",
-    "typesVersions": {
-        "*": {
-            ".": [
-                "./dist/types.d.mts"
-            ],
-            "runtime/*": [
-                "./dist/runtime/*.d.mts"
-            ]
-        }
+    "main": "./src/module.ts",
+    "publishConfig": {
+        "exports": {
+            ".": {
+                "types": "./dist/types.d.mts",
+                "import": "./dist/module.mjs"
+            },
+            "./runtime/*": {
+                "types": "./dist/runtime/*.d.ts",
+                "import": "./dist/runtime/*.js"
+            }
+        },
+        "main": "./dist/module.mjs"
     },
     "files": [
         "dist"
     ],
     "scripts": {
-        "build": "nuxt-module-build prepare && nuxt-module-build build",
+        "build": "nuxt-module-build prepare && tsdown",
         "dev": "nuxi dev playground",
         "dev:build": "nuxi build playground",
-        "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground && pnpm -C playground-v5 exec nuxt prepare",
+        "dev:prepare": "nuxt-module-build prepare && nuxi prepare playground && pnpm -C playground-v5 exec nuxt prepare",
         "dev:v5": "pnpm -C playground-v5 exec nuxt dev",
         "lint": "eslint . --cache",
         "lint:fix": "eslint . --cache --fix",
-        "prepack": "pnpm build",
+        "prepack": "nuxt-module-build prepare && tsdown",
         "test": "vitest run",
-        "test:types": "vue-tsc --noEmit && vue-tsc -b playground --noEmit",
+        "test:types": "vue-tsc -b --noEmit && vue-tsc -b playground --noEmit",
         "test:watch": "vitest watch"
     },
     "dependencies": {
@@ -51,7 +54,8 @@
     "devDependencies": {
         "@nuxt/devtools": "latest",
         "@nuxt/eslint-config": "^1.17.0",
-        "@nuxt/module-builder": "^1.0.4",
+        "@nuxt/module-builder": "2.0.0-alpha.1",
+        "@nuxt/schema": "^4.6.4",
         "@nuxt/test-utils": "^4.4.0",
         "@vue/test-utils": "^2.5.1",
         "crawler-user-agents": "^1.66.0",
@@ -59,8 +63,8 @@
         "happy-dom": "^21.0.4",
         "nuxt": "^4.6.4",
         "playwright-core": "^1.65.0",
+        "tsdown": "^0.23.7",
         "typescript": "^6.0.3",
-        "unbuild": "^3.6.1",
         "vitest": "^5.1.0",
         "vue-tsc": "^3.3.14"
     },

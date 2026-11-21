@@ -1,0 +1,10 @@
+{
+  "extends": "./.nuxt/tsconfig.node.json",
+  "compilerOptions": {
+    "allowJs": false,
+    "declaration": true,
+    "erasableSyntaxOnly": true,
+    "isolatedDeclarations": true,
+    "tsBuildInfoFile": "./.nuxt/tsconfig.module.tsbuildinfo"
+  }
+}

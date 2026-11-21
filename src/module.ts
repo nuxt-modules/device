@@ -1,8 +1,9 @@
-import { defineNuxtModule, addPlugin, addImportsDir, createResolver, addTemplate } from '@nuxt/kit'
+import type { NuxtModule } from '@nuxt/schema'
+import { defineNuxtModule, addPlugin, addImportsDir, createResolver, addTemplate, addTypeTemplate } from '@nuxt/kit'
 import crawlers from 'crawler-user-agents'
 import pkg from '../package.json' with { type: 'json' }
 
-export default defineNuxtModule({
+const module: NuxtModule = defineNuxtModule({
   meta: {
     name: pkg.name,
     compatibility: {
@@ -23,5 +24,15 @@ export default defineNuxtModule({
         crawlers.map(crawler => crawler.pattern).join('|')
       }/)`,
     })
+
+    addTypeTemplate({
+      filename: 'types/nuxtjs-device.d.ts',
+      getContents: () => `declare module '#build/nuxtjs-device.mjs' {
+  export const REGEX_CRAWLER: RegExp
+}
+`,
+    }, { nuxt: true, node: true })
   },
 })
+
+export default module
