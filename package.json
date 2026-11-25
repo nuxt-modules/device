@@ -49,19 +49,19 @@
         "test:watch": "vitest watch"
     },
     "dependencies": {
-        "@nuxt/kit": "^4.6.4"
+        "@nuxt/kit": "^4.7.0"
     },
     "devDependencies": {
         "@nuxt/devtools": "latest",
         "@nuxt/eslint-config": "^1.17.0",
         "@nuxt/module-builder": "2.0.0-alpha.1",
-        "@nuxt/schema": "^4.6.4",
+        "@nuxt/schema": "^4.7.0",
         "@nuxt/test-utils": "^4.4.0",
         "@vue/test-utils": "^2.5.1",
         "crawler-user-agents": "^1.66.0",
         "eslint": "^10.14.0",
         "happy-dom": "^21.0.4",
-        "nuxt": "^4.6.4",
+        "nuxt": "^4.7.0",
         "playwright-core": "^1.65.0",
         "tsdown": "^0.23.7",
         "typescript": "^6.0.3",
